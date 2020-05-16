@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Distributed Machine Learning on Edge Devices</title>
+	
+	<meta name="author" content="Yasaman Amannejad">
+
+	<!-- Enable responsive viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le styles -->
+	<link href="https://yasaman-a.github.io//assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://yasaman-a.github.io//assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://yasaman-a.github.io//assets/resources/syntax/syntax.css" rel="stylesheet">
+	<link href="https://yasaman-a.github.io//assets/css/style.css" rel="stylesheet">
+	<link href="https://yasaman-a.github.io//assets/css/custom.css" rel="stylesheet">
+
+	<!-- Le fav and touch icons -->
+	<!-- Update these with your own images
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	-->
+
+
+
+</head>
+
+<body>
+	<nav class="navbar navbar-default visible-xs" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://github.com/Yasaman-A"
+				target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://twitter.com/_Yas_aman_"
+				target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="mailto:yamannejad@mtroyal.ca">
+				<i class="fa fa-envelope"></i>
+			</a>
+			
+			<a class="navbar-brand" href="https://yasaman-a.github.io//">
+				<img src="/assets/media/0.jpg" width="60" class="img-circle" />
+				Yasaman Amannejad
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="https://yasaman-a.github.io//">Home</a></li>
+				<li><a href="https://yasaman-a.github.io//categories.html">Categories</a></li>
+				<li><a href="https://yasaman-a.github.io//tags.html">Tags</a></li>
+			</ul>
+		</div>-->
+		<!-- /.navbar-collapse -->
+	</nav>
+
+	<!-- nav-menu-dropdown -->
+	<div class="btn-group hidden-xs" id="nav-menu">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="fa fa-bars"></i>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="https://yasaman-a.github.io//"><i class="fa fa-home"></i>Blog</a></li>
+			<li><a href="https://yasaman-a.github.io//about.html"><i class="fa fa-home"></i>About Me</a></li>
+			<!--<li><a href="https://yasaman-a.github.io//"><i class="fa fa-tags"></i>Mobile Development</a></li>-->
+			<!--<li><a href="https://yasaman-a.github.io//content/mobile-dev/"><i class="fa fa-tags"></i>Mobile Development</a></li>-->
+
+			<!--<li><a href="https://yasaman-a.github.io//categories.html"><i class="fa fa-folder"></i>Categories</a></li>
+			<li><a href="https://yasaman-a.github.io//tags.html"><i class="fa fa-tags"></i>Tags</a></li>-->
+			<li class="divider"></li>
+			<li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
+		</ul>
+	</div>
+
+	<div class="col-sm-3 sidebar hidden-xs"
+		style="">
+		<!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="https://yasaman-a.github.io//">
+		<img src="https://yasaman-a.github.io//assets/media/0.jpg" class="img-circle" />
+	</a>
+	<h3 class="title">
+		<a href="https://yasaman-a.github.io//">Yasaman Amannejad</a>
+	</h3>
+</header>
+
+
+<div id="bio" class="text-center">
+	Software Engineer, Assistant Professor
+</div>
+
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://github.com/Yasaman-A">
+				<i class="fa fa-github-alt fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://twitter.com/_Yas_aman_">
+				<i class="fa fa-twitter fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="mailto:yamannejad@mtroyal.ca">
+				<i class="fa fa-envelope fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://linkedin.com/in/yasaman-amannejad">
+				<i class="fa fa-linkedin fa-lg"></i>
+			</a>
+		</li>
+		
+	</ul>
+</div>
+<!-- sidebar.html end -->
+	</div>
+
+	<div class="col-sm-9 col-sm-offset-3">
+		<div class="page-header">
+	<h1>Distributed Machine Learning on Edge Devices </h1>
+</div>
+
+<article>
+
+	<div class="col-sm-10">
+		<span class="post-date">
+			
+			August
+			28th,
+			
+			2020
+		</span>
+		<div class="article_body">
+			<p>Sensors and smart devices are continuously collecting massive amounts of data. Today’s state-of-the-art machine learning (ML) techniques are typically trained using cloud platforms, leveraging the elastic scalability of the cloud. For such processing, data from various sources need to be transferred to a cloud server. However, this can cause privacy concerns for users and also creates overhead on the network. Sharing life logging photos and videos from cell phones and wearable devices can cause privacy concerns and network overheas. To overcome these challenges, the data processing can be done on devices where data is generated. In this blog post, we discuss as a distributed learning solution suitable for such data processings on edge devices.</p>
+
+<hr />
+
+<p><strong>The need for distributed data processing -</strong> Learning from distributed data over edge devices has gained increasing interest in the recent years. This increase in popularity is because of the following reasons. <strong><em>First</em></strong>, there is a need for processing massive amount of data that is continuously being generated through mobile phones, wearable devices, autonomous vehicles. Transferring all the data to a remote cloud server is not always feasible due to limiting factors such as network bandwidth of these devices and the long propagation delays that can incur unacceptable latency. <strong><em>Second</em></strong>, the private nature of these data, e.g., life-logging videos and recorded phone calls, causes privacy concerns for sharing the data with cloud servers. <strong><em>Finally</em></strong>, the transfer of such massive data to a cloud server for processing can burden the backbone networks especially for applications with unstructured data, e.g., image and video analytics. These factors along with the improvements in the storage and computation capacity of these edge devices are shifting the data processing and model training of ML applications from cloud servers to edge devices.</p>
+
+<!-- **Example -**  -->
+<p>Consider large number of user devices, such as mobile phones, each with personal collections of photos or autonomous vehicles with images captured by cameras. If all the distributed data on these devices are accessible in a central place, one can obtain a high-performance ML model that has been trained on an extremely large dataset. However, it is not desirable for clients to share their data due to privacy concerns.</p>
+
+<p><strong>One possible solution -</strong>  The need for distributed ML on edge devices has lead to  a  growing  interest  in  <em>federated  learning  (FL)</em>  as  an intersection of ML and edge computing fields. FL is to provide a framework for distributed ML on edge devices. In this framework, clients do not share their private data with the remote server, e.g., with a cloud server. Instead, clients train their own local models from their own data. These local models are then shared with a central server to aggregate them and build a global model. This way, using the FL framework clients can build a model from their collective data without sharing their own local data with other clients or with a remote server.</p>
+
+<!-- In general, there are two main entities in FL process: the data owners, i.e., *client*, and the global model owner, i.e., *server*. Let *Clients = {client_1, client_2,..., client_n}* denote the set of *n* clients, each of which has a dataset *D_i*, *i* in *n*, stored on their personal devices, e.g., cellphones. In classical approaches, all clients send their data to the server and the server trains a conventional model, *model*, in central fashion using all data in D. However, as described earlier, this is not possible for all applications due to privacy concerns and the network bandwidth limitations of the edge computing devices. In FL, clients do not share their private data with the remote server, instead, they build a local model, *model_i*, using their own data, *D_i*, and share the parameters of their trained model with the FL server. The server collects all local model parameters and aggregates them to build a global model, *model_federated*. The trained model is sent back to clients for further enhancements. This process continues for *r* rounds of training.  -->
+
+<p>A typical training process is shown in the following figure and it includes four steps:</p>
+
+<ol>
+  <li>
+    <p>Model broadcast: The server defines the structure of the model to be trained by all clients and decides the hyper-parameters of the local and global models, e.g., the optimizer or the learning rate of a neural network. Next, the server broadcasts the model and parameters to clients. In the first round, the broadcasted model is not trained. In the following rounds, the server broadcasts the model aggregated from the local training of clients.</p>
+  </li>
+  <li>
+    <p>Local model training: Clients participating in the training process download the model and train the model based on their local data. The objective of each client during its local training is to find optimal model parameters that minimize the model loss based on client’s local data.</p>
+  </li>
+  <li>
+    <p>Model parameter updates: When each client finishes its training, they share their trained model with the FL server.</p>
+  </li>
+  <li>
+    <p>Global model aggregation: When the participating clients share their models with the server, the server aggregates them into a global model. The server’s objective is to minimize the global loss function.</p>
+  </li>
+</ol>
+
+<p class="center-image"><img src="https://yasaman-a.github.io//assets/media/FL-process-1.png" alt="The main steps in FL training process" title="The main steps in FL training process" /></p>
+
+<p>In FL clients do not share their data with the server.  Clients only share their local model parameters; this significantly reduces the network overhead compared to when the data moves over the network. The computation that was previously performed on a powerful server is distributed to many less powerful devices such as mobile phones or on-board units in vehicles. In each round, the parameters are exchanged twice, once when clients send their local models to the server, and once when they download the aggregated model from the server. This is done for all participating clients. The communication cost is a function of model size, the number of rounds and the number of participating clients. This cost can be compared with the cost of exchanging all client data records with a central server. The cost of exchanging data, specially for unstructured data such as image or video records can be very large. This motivates the use of FL as a distributed ML technique that results in higher privacy for clients and lower communication overhead.</p>
+
+<p>In our recently published <a href="https://drive.google.com/file/d/1hN3QjdYxMF5uwuMdT1kI7C5ezWzDJLRW/view?usp=sharing" target="_blank">paper</a>, we study the performance of a deep learning model trained in distributed fashion under different parameter settings and compare it’s performance with the same model when trained in central and traditional fashion. My co-authors in this paper are <em>Saba F. Lameh</em>, <em>Wade Noble</em>, and <a href="http://arash-afshar.github.io/"><em>Arash Afshar</em></a>.</p>
+
+<p class="center-image"><a href="https://drive.google.com/file/d/1hN3QjdYxMF5uwuMdT1kI7C5ezWzDJLRW/view?usp=sharing" target="_blank">
+<img src="https://yasaman-a.github.io//assets/media/paper_IDSTA2020.png" alt="Analysis of FL models" title="Analysis of Federated Learning Models" />
+</a></p>
+
+		</div>
+
+		
+
+		
+
+		<hr>
+
+		<div>
+			<section class="share col-sm-6">
+				<h4 class="section-title">Share Post</h4>
+				<a class="btn btn-default btn-sm twitter"
+					href="http://twitter.com/share?text=Distributed Machine Learning on Edge Devices&via=_Yas_aman_"
+					onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+					<i class="fa fa-twitter fa-lg"></i>
+					Twitter
+				</a>
+				<a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+					onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+					<i class="fa fa-facebook fa-lg"></i>
+					Facebook
+				</a>
+
+				<a class="btn btn-default btn-sm linkedin"
+					href="https://www.linkedin.com/shareArticle?mini=true&url=https://yasaman-a.github.io///2020/08/28/Distributed-Learning.html&title=Distributed Machine Learning on Edge Devices&summary=<p>Sensors and smart devices are continuously collecting massive amounts of data. Today’s state-of-the-art machine learning (ML) techniques are typically trained using cloud platforms, leveraging the elastic scalability of the cloud. For such processing, data from various sources need to be transferred to a cloud server. However, this can cause privacy concerns for users and also creates overhead on the network. Sharing life logging photos and videos from cell phones and wearable devices can cause privacy concerns and network overheas. To overcome these challenges, the data processing can be done on devices where data is generated. In this blog post, we discuss as a distributed learning solution suitable for such data processings on edge devices.</p>
+&source=https://yasaman-a.github.io/"
+					onclick="window.open(this.href, 'linkedin-share','width=580,height=296');return false;">
+					<i class="fa fa-linkedin fa-lg"></i>
+					LinkedIn
+				</a>
+			</section>
+
+			<section class="col-sm-6 author">
+				<img src="" class="img-rounded author-image" />
+				<h4 class="section-title author-name">Yasaman Amannejad</h4>
+				<p class="author-bio">Software Engineer, Assistant Professor</p>
+			</section>
+		</div>
+
+		<div class="clearfix"></div>
+
+		<ul class="pager">
+			
+			<li class="previous disabled"><a>&larr; Previous</a></li>
+			
+			
+			<li class="next disabled"><a>Next &rarr;</a>
+				
+		</ul>
+
+		<hr>
+	</div>
+
+	<div class="col-sm-2 sidebar-2">
+
+	</div>
+</article>
+<div class="clearfix"></div>
+
+
+
+
+		<footer>
+			<hr />
+			<p>
+				&copy; 2020 Yasaman Amannejad.
+			</p>
+		</footer>
+	</div>
+
+	<script type="text/javascript" src="https://yasaman-a.github.io//assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="https://yasaman-a.github.io//assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://yasaman-a.github.io//assets/js/app.js"></script>
+</body>
+
+</html>
+
+

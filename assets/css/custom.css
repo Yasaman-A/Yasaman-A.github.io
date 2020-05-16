@@ -1,0 +1,125 @@
+
+* {
+	text-align: justify;
+  }
+  ul.custom-header {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #2c3e50;
+	margin-bottom: 20px;
+}
+
+.custom-header li {
+	float: left;
+}
+
+.custom-header li a{
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.custom-header .mydropdown div{
+	color: white;
+	text-align: center;
+	text-decoration: none;
+}
+.custom-header .mydropdown .dropdown-defalt{
+	padding: 14px 16px;
+	
+}
+
+.custom-header .mydropdown .dropdown-content{
+	padding: 5px 7px;
+	
+}
+
+.custom-header li a:hover , .custom-header .mydropdown .dropdown-defalt:hover, .mydropdown .dropdown-content a:hover{
+	background-color:  #ffb3b3;
+}
+
+.active {
+	background-color: tomato;
+}
+
+
+/**/
+
+.dropdown-content{
+	background-color: #2c3e50;
+	display: none;
+	position: absolute;
+	}
+
+.mydropdown:hover .dropdown-content{
+display: block;
+
+}
+
+
+
+/*===================*/
+
+/* Float four columns side by side */
+.column {
+	float: left;
+	width: 25%;
+	padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding */
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 800px) {
+	.column {
+	  width: 100%;
+	  display: block;
+	  margin-bottom: 20px;
+	}
+  }
+  
+  /* Style the counter cards */
+  .card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	padding: 16px;
+	text-align: center;
+	background-color: #f1f1f1;
+  }
+/*====================*/
+
+.myContent h1, .myContent p{
+	color:#2c3e50;
+}
+.myContent a:hover{
+	color:tomato;
+}
+
+.myContent div .column .card:hover{
+	background-color: #ffffe6;
+}
+
+/*-------------------*/
+.center-image{
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.center-text{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
