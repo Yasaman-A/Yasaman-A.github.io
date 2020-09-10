@@ -1,0 +1,12 @@
+I"u<hr />
+
+<iframe width="600" height="380" src="https://www.youtube.com/embed/RvrLDsH7z48?list=PL45wcLqNa3c5WL1UJnH6mHBM-Bbs4UyNU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>Open a PDF file <a href="https://symposium.cadth.ca/wp-content/uploads/2020/07/Poster_1611.pdf">example</a>.</p>
+
+<p>In our recently published <a href="https://symposium.cadth.ca/wp-content/uploads/2020/07/Poster_1611.pdf" target="_blank">poster</a>, we have used natural language processing to convert physicians’ note into a structured records and then we have applied machine learning to build predictive models. This work is done in collaboration with Medlior Health Outcomes Research Ltd. and two students from Mount Royal University, Peter Morrison and Xia Wang have worked on this project as their senior project course.</p>
+
+<p class="center-image"><a href="https://symposium.cadth.ca/wp-content/uploads/2020/07/Poster_1611.pdf" target="_blank">
+<img src="/assets/media/poster_1611.png" alt="Analysis of FL models" title="Analysis of Federated Learning Models" />
+</a></p>
+:ET

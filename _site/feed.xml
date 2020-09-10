@@ -3,8 +3,8 @@
 	<channel>
 		<title>Yasaman Amannejad</title>
 		<description></description>
-		<link>https://yasaman-a.github.io//</link>
-		<atom:link href="https://yasaman-a.github.io//" rel="self" type="application/rss+xml" />
+		<link>/</link>
+		<atom:link href="/" rel="self" type="application/rss+xml" />
 		
 			<item>
 				<title>Distributed Machine Learning on Edge Devices</title>
@@ -38,19 +38,39 @@
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p class=&quot;center-image&quot;&gt;&lt;img src=&quot;https://yasaman-a.github.io//assets/media/FL-process-1.png&quot; alt=&quot;The main steps in FL training process&quot; title=&quot;The main steps in FL training process&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;center-image&quot;&gt;&lt;img src=&quot;/assets/media/FL-process-1.png&quot; alt=&quot;The main steps in FL training process&quot; title=&quot;The main steps in FL training process&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In FL clients do not share their data with the server.  Clients only share their local model parameters; this significantly reduces the network overhead compared to when the data moves over the network. The computation that was previously performed on a powerful server is distributed to many less powerful devices such as mobile phones or on-board units in vehicles. In each round, the parameters are exchanged twice, once when clients send their local models to the server, and once when they download the aggregated model from the server. This is done for all participating clients. The communication cost is a function of model size, the number of rounds and the number of participating clients. This cost can be compared with the cost of exchanging all client data records with a central server. The cost of exchanging data, specially for unstructured data such as image or video records can be very large. This motivates the use of FL as a distributed ML technique that results in higher privacy for clients and lower communication overhead.&lt;/p&gt;
 
 &lt;p&gt;In our recently published &lt;a href=&quot;https://drive.google.com/file/d/1hN3QjdYxMF5uwuMdT1kI7C5ezWzDJLRW/view?usp=sharing&quot; target=&quot;_blank&quot;&gt;paper&lt;/a&gt;, we study the performance of a deep learning model trained in distributed fashion under different parameter settings and compare it’s performance with the same model when trained in central and traditional fashion. My co-authors in this paper are &lt;em&gt;Saba F. Lameh&lt;/em&gt;, &lt;em&gt;Wade Noble&lt;/em&gt;, and &lt;a href=&quot;http://arash-afshar.github.io/&quot;&gt;&lt;em&gt;Arash Afshar&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p class=&quot;center-image&quot;&gt;&lt;a href=&quot;https://drive.google.com/file/d/1hN3QjdYxMF5uwuMdT1kI7C5ezWzDJLRW/view?usp=sharing&quot; target=&quot;_blank&quot;&gt;
-&lt;img src=&quot;https://yasaman-a.github.io//assets/media/paper_IDSTA2020.png&quot; alt=&quot;Analysis of FL models&quot; title=&quot;Analysis of Federated Learning Models&quot; /&gt;
+&lt;img src=&quot;/assets/media/paper_IDSTA2020.png&quot; alt=&quot;Analysis of FL models&quot; title=&quot;Analysis of Federated Learning Models&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 </description>
 				<pubDate>Mon, 07 Sep 2020 00:00:00 -0600</pubDate>
-				<link>https://yasaman-a.github.io//2020/09/07/Distributed-Learning.html</link>
-				<guid isPermaLink="true">https://yasaman-a.github.io//2020/09/07/Distributed-Learning.html</guid>
+				<link>/2020/09/07/Distributed-Learning.html</link>
+				<guid isPermaLink="true">/2020/09/07/Distributed-Learning.html</guid>
+			</item>
+		
+			<item>
+				<title>Insights into Application of Machine Learning in Healthcare</title>
+				<description>&lt;p&gt;Machine learning (ML) has shown a great potential in healthcare applications. However, in some cases the use of these techniques are limited due to the unavailabilty of structured data. 
+Free human expression in the form of natural language is a primary form of communication in clinical settings. While this can be convenient for medical record keeping, this format is not ideal for machine learning models. Natural language processing (NLP) has the potential to accelerate translation of cancer treatments from the laboratory to the clinic and will be a powerful tool in the era of personalized medicine. This technology can harvest important clinical variables trapped in the free-text narratives within electronic medical records. In this blog post we report our experience and results from applying NLP on clinical free-text and building structured reports suitable for the application of ML models.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;iframe width=&quot;600&quot; height=&quot;380&quot; src=&quot;https://www.youtube.com/embed/RvrLDsH7z48?list=PL45wcLqNa3c5WL1UJnH6mHBM-Bbs4UyNU&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;In our recently published &lt;a href=&quot;https://symposium.cadth.ca/wp-content/uploads/2020/07/Poster_1611.pdf&quot; target=&quot;_blank&quot;&gt;poster&lt;/a&gt;, we have used natural language processing to convert physicians’ note into a structured records and then we have applied machine learning to build predictive models. This work is done in collaboration with Medlior Health Outcomes Research Ltd. and two students from Mount Royal University, Peter Morrison and Xia Wang have worked on this project.&lt;/p&gt;
+
+&lt;p class=&quot;center-image&quot;&gt;&lt;a href=&quot;https://symposium.cadth.ca/wp-content/uploads/2020/07/Poster_1611.pdf&quot; target=&quot;_blank&quot;&gt;
+&lt;img src=&quot;/assets/media/poster_1611.png&quot; alt=&quot;Analysis of FL models&quot; title=&quot;Analysis of Federated Learning Models&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+</description>
+				<pubDate>Sun, 09 Aug 2020 00:00:00 -0600</pubDate>
+				<link>/2020/08/09/Application-ML.html</link>
+				<guid isPermaLink="true">/2020/08/09/Application-ML.html</guid>
 			</item>
 		
 	</channel>
