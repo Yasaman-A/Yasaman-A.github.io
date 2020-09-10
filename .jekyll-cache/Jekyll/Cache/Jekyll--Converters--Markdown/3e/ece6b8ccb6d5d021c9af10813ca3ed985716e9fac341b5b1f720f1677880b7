@@ -1,4 +1,4 @@
-I"ê<p>Sensors and smart devices are continuously collecting massive amounts of data. Today‚Äôs state-of-the-art machine learning (ML) techniques are typically trained using cloud platforms, leveraging the elastic scalability of the cloud. For such processing, data from various sources need to be transferred to a cloud server. However, this can cause privacy concerns for users and also creates overhead on the network. Sharing life logging photos and videos from cell phones and wearable devices can cause privacy concerns and network overheas. To overcome these challenges, the data processing can be done on devices where data is generated. In this blog post, we discuss as a distributed learning solution suitable for such data processings on edge devices.</p>
+I"¢<p>Sensors and smart devices are continuously collecting massive amounts of data. Today‚Äôs state-of-the-art machine learning (ML) techniques are typically trained using cloud platforms, leveraging the elastic scalability of the cloud. For such processing, data from various sources need to be transferred to a cloud server. However, this can cause privacy concerns for users and also creates overhead on the network. Sharing life logging photos and videos from cell phones and wearable devices can cause privacy concerns and network overheas. To overcome these challenges, the data processing can be done on devices where data is generated. In this blog post, we discuss as a distributed learning solution suitable for such data processings on edge devices.</p>
 
 <hr />
 
@@ -34,7 +34,7 @@
 
 <p>In our recently published <a href="https://drive.google.com/file/d/1hN3QjdYxMF5uwuMdT1kI7C5ezWzDJLRW/view?usp=sharing" target="_blank">paper</a>, we study the performance of a deep learning model trained in distributed fashion under different parameter settings and compare it‚Äôs performance with the same model when trained in central and traditional fashion. My co-authors in this paper are <em>Saba F. Lameh</em>, <em>Wade Noble</em>, and <a href="http://arash-afshar.github.io/"><em>Arash Afshar</em></a>.</p>
 
-<p class="center-image"><a href="https://drive.google.com/file/d/1hN3QjdYxMF5uwuMdT1kI7C5ezWzDJLRW/view?usp=sharing" target="_blank">
-<img src="/assets/media/paper_IDSTA2020.png" alt="Analysis of FL models" title="Analysis of Federated Learning Models" />
-</a></p>
+<!-- <a href="https://drive.google.com/file/d/1hN3QjdYxMF5uwuMdT1kI7C5ezWzDJLRW/view?usp=sharing" target="_blank"> -->
+<p class="center-image"><img src="/assets/media/paper_IDSTA2020.png" alt="Analysis of FL models" title="Analysis of Federated Learning Models" />
+<!-- </a> --></p>
 :ET

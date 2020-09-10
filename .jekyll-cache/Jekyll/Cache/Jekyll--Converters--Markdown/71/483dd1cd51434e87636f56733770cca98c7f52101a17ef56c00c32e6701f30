@@ -1,16 +1,0 @@
-I"^<p>Sensors and smart devices are continuously collecting massive amounts of data. Today’s state-of-the-art machine learning (ML) techniques are typically trained using cloud platforms, leveraging the elastic scalability of the cloud. For such processing, data from various sources need to be transferred to a cloud server. However, this can cause privacy concerns for users and also creates overhead on the network. Sharing life logging photos and videos from cell phones and wearable devices can cause privacy concerns and network overheas. To overcome these challenges, the data processing can be done on devices where data is generated. In this blog post, we discuss as a distributed learning solution suitable for such data processings on edge devices.</p>
-
-<hr />
-
-<p><strong>The need for distributed data processing -</strong> Learning from distributed data over edge devices has gained increasing interest in the recent years. This increase in popularity is because of the following reasons. <strong><em>First</em></strong>, there is a need for processing massive amount of data that is continuously being generated through mobile phones, wearable devices, autonomous vehicles. Transferring all the data to a remote cloud server is not always feasible due to limiting factors such as network bandwidth of these devices and the long propagation delays that can incur unacceptable latency. <strong><em>Second</em></strong>, the private nature of these data, e.g., life-logging videos and recorded phone calls, causes privacy concerns for sharing the data with cloud servers. <strong><em>Finally</em></strong>, the transfer of such massive data to a cloud server for processing can burden the backbone networks especially for applications with unstructured data, e.g., image and video analytics. These factors along with the improvements in the storage and computation capacity of these edge devices are shifting the data processing and model training of ML applications from cloud servers to edge devices.</p>
-
-<iframe width="600" height="380" src="https://www.youtube.com/embed/RvrLDsH7z48?list=PL45wcLqNa3c5WL1UJnH6mHBM-Bbs4UyNU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-
-<p>Open a PDF file <a href="https://symposium.cadth.ca/wp-content/uploads/2020/07/Poster_1611.pdf">example</a>.</p>
-
-<p>In our recently published <a href="https://drive.google.com/file/d/1hN3QjdYxMF5uwuMdT1kI7C5ezWzDJLRW/view?usp=sharing" target="_blank">paper</a>, we study the performance of a deep learning model trained in distributed fashion under different parameter settings and compare it’s performance with the same model when trained in central and traditional fashion. My co-authors in this paper are <em>Saba F. Lameh</em>, <em>Wade Noble</em>, and <a href="http://arash-afshar.github.io/"><em>Arash Afshar</em></a>.</p>
-
-<p class="center-image"><a href="https://drive.google.com/file/d/1hN3QjdYxMF5uwuMdT1kI7C5ezWzDJLRW/view?usp=sharing" target="_blank">
-<img src="/assets/media/paper_IDSTA2020.png" alt="Analysis of FL models" title="Analysis of Federated Learning Models" />
-</a></p>
-:ET

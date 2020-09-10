@@ -42,6 +42,6 @@ In FL clients do not share their data with the server.  Clients only share their
 In our recently published <a href="https://drive.google.com/file/d/1hN3QjdYxMF5uwuMdT1kI7C5ezWzDJLRW/view?usp=sharing" target="_blank">paper</a>, we study the performance of a deep learning model trained in distributed fashion under different parameter settings and compare it's performance with the same model when trained in central and traditional fashion. My co-authors in this paper are *Saba F. Lameh*, *Wade Noble*, and <a href="http://arash-afshar.github.io/">*Arash Afshar*</a>.
 
 {: .center-image}
-<a href="https://drive.google.com/file/d/1hN3QjdYxMF5uwuMdT1kI7C5ezWzDJLRW/view?usp=sharing" target="_blank">
+<!-- <a href="https://drive.google.com/file/d/1hN3QjdYxMF5uwuMdT1kI7C5ezWzDJLRW/view?usp=sharing" target="_blank"> -->
 ![Analysis of FL models]({{ site.BASE_PATH }}/assets/media/paper_IDSTA2020.png "Analysis of Federated Learning Models")
-</a>
+<!-- </a> -->

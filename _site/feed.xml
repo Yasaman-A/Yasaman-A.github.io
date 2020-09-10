@@ -44,9 +44,9 @@
 
 &lt;p&gt;In our recently published &lt;a href=&quot;https://drive.google.com/file/d/1hN3QjdYxMF5uwuMdT1kI7C5ezWzDJLRW/view?usp=sharing&quot; target=&quot;_blank&quot;&gt;paper&lt;/a&gt;, we study the performance of a deep learning model trained in distributed fashion under different parameter settings and compare it’s performance with the same model when trained in central and traditional fashion. My co-authors in this paper are &lt;em&gt;Saba F. Lameh&lt;/em&gt;, &lt;em&gt;Wade Noble&lt;/em&gt;, and &lt;a href=&quot;http://arash-afshar.github.io/&quot;&gt;&lt;em&gt;Arash Afshar&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p class=&quot;center-image&quot;&gt;&lt;a href=&quot;https://drive.google.com/file/d/1hN3QjdYxMF5uwuMdT1kI7C5ezWzDJLRW/view?usp=sharing&quot; target=&quot;_blank&quot;&gt;
-&lt;img src=&quot;/assets/media/paper_IDSTA2020.png&quot; alt=&quot;Analysis of FL models&quot; title=&quot;Analysis of Federated Learning Models&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
+&lt;!-- &lt;a href=&quot;https://drive.google.com/file/d/1hN3QjdYxMF5uwuMdT1kI7C5ezWzDJLRW/view?usp=sharing&quot; target=&quot;_blank&quot;&gt; --&gt;
+&lt;p class=&quot;center-image&quot;&gt;&lt;img src=&quot;/assets/media/paper_IDSTA2020.png&quot; alt=&quot;Analysis of FL models&quot; title=&quot;Analysis of Federated Learning Models&quot; /&gt;
+&lt;!-- &lt;/a&gt; --&gt;&lt;/p&gt;
 </description>
 				<pubDate>Mon, 07 Sep 2020 00:00:00 -0600</pubDate>
 				<link>/2020/09/07/Distributed-Learning.html</link>
