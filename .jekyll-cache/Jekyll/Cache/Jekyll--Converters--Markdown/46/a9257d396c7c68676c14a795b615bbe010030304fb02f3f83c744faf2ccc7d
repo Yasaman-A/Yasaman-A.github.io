@@ -1,4 +1,4 @@
-I"¢<p>Sensors and smart devices are continuously collecting massive amounts of data. Todayâ€™s state-of-the-art machine learning (ML) techniques are typically trained using cloud platforms, leveraging the elastic scalability of the cloud. For such processing, data from various sources need to be transferred to a cloud server. However, this can cause privacy concerns for users and also creates overhead on the network. Sharing life logging photos and videos from cell phones and wearable devices can cause privacy concerns and network overheas. To overcome these challenges, the data processing can be done on devices where data is generated. In this blog post, we discuss as a distributed learning solution suitable for such data processings on edge devices.</p>
+I"Ø<p>Sensors and smart devices are continuously collecting massive amounts of data. Todayâ€™s state-of-the-art machine learning (ML) techniques are typically trained using cloud platforms, leveraging the elastic scalability of the cloud. For such processing, data from various sources need to be transferred to a cloud server. However, this can cause privacy concerns for users and also creates overhead on the network. Sharing life logging photos and videos from cell phones and wearable devices can cause privacy concerns and network overheas. To overcome these challenges, the data processing can be done on devices where data is generated. In this blog post, we discuss as a distributed learning solution suitable for such data processings on edge devices.</p>
 
 <hr />
 
@@ -28,13 +28,13 @@
   </li>
 </ol>
 
-<p class="center-image"><img src="/assets/media/FL-process-1.png" alt="The main steps in FL training process" title="The main steps in FL training process" /></p>
+<p class="center-image"><img src="https://yasaman-a.github.io/assets/media/FL-process-1.png" alt="The main steps in FL training process" title="The main steps in FL training process" /></p>
 
 <p>In FL clients do not share their data with the server.  Clients only share their local model parameters; this significantly reduces the network overhead compared to when the data moves over the network. The computation that was previously performed on a powerful server is distributed to many less powerful devices such as mobile phones or on-board units in vehicles. In each round, the parameters are exchanged twice, once when clients send their local models to the server, and once when they download the aggregated model from the server. This is done for all participating clients. The communication cost is a function of model size, the number of rounds and the number of participating clients. This cost can be compared with the cost of exchanging all client data records with a central server. The cost of exchanging data, specially for unstructured data such as image or video records can be very large. This motivates the use of FL as a distributed ML technique that results in higher privacy for clients and lower communication overhead.</p>
 
 <p>In our recently published <a href="https://drive.google.com/file/d/1hN3QjdYxMF5uwuMdT1kI7C5ezWzDJLRW/view?usp=sharing" target="_blank">paper</a>, we study the performance of a deep learning model trained in distributed fashion under different parameter settings and compare itâ€™s performance with the same model when trained in central and traditional fashion. My co-authors in this paper are <em>Saba F. Lameh</em>, <em>Wade Noble</em>, and <a href="http://arash-afshar.github.io/"><em>Arash Afshar</em></a>.</p>
 
 <!-- <a href="https://drive.google.com/file/d/1hN3QjdYxMF5uwuMdT1kI7C5ezWzDJLRW/view?usp=sharing" target="_blank"> -->
-<p class="center-image"><img src="/assets/media/paper_IDSTA2020.png" alt="Analysis of FL models" title="Analysis of Federated Learning Models" />
+<p class="center-image"><img src="https://yasaman-a.github.io/assets/media/paper_IDSTA2020.png" alt="Analysis of FL models" title="Analysis of Federated Learning Models" />
 <!-- </a> --></p>
 :ET
