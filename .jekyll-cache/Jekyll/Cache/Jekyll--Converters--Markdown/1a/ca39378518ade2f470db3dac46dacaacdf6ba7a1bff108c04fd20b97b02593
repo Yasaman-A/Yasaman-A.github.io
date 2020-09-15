@@ -1,4 +1,4 @@
-I"ç<p>Machine learning (ML) has shown a great potential in healthcare applications. However, in some cases the use of these techniques are limited due to the unavailabilty of structured data. 
+I"r<p>Machine learning (ML) has shown a great potential in healthcare applications. However, in some cases the use of these techniques are limited due to the unavailabilty of structured data. 
 Free human expression in the form of natural language is a primary form of communication in clinical settings. While this can be convenient for medical record keeping, this format is not ideal for machine learning models. Natural language processing (NLP) has the potential to accelerate translation of cancer treatments from the laboratory to the clinic and will be a powerful tool in the era of personalized medicine. This technology can harvest important clinical variables trapped in the free-text narratives within electronic medical records. In this blog post we report our experience and results from applying NLP on clinical free-text and building structured reports suitable for the application of ML models.</p>
 
 <hr />
@@ -8,6 +8,6 @@ Free human expression in the form of natural language is a primary form of commu
 <p>In our recently published <a href="https://symposium.cadth.ca/wp-content/uploads/2020/07/Poster_1611.pdf" target="_blank">poster</a>, we have used natural language processing to convert physicians‚Äô note into a structured records and then we have applied machine learning to build predictive models. This work is done in collaboration with Medlior Health Outcomes Research Ltd. and two students from Mount Royal University, Peter Morrison and Xia Wang have worked on this project.</p>
 
 <p class="center-image"><a href="https://symposium.cadth.ca/wp-content/uploads/2020/07/Poster_1611.pdf" target="_blank">
-<img src="https://yasaman-a.github.io/assets/media/poster_1611.png" alt="Analysis of FL models" title="Analysis of Federated Learning Models" />
+<img src="/assets/media/poster_1611.png" alt="Analysis of FL models" title="Analysis of Federated Learning Models" />
 </a></p>
 :ET

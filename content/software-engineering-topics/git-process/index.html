@@ -1,0 +1,154 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Practice Your Git Knowledge</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="practice-your-git-knowledge"
+                  title="Practice Your Git Knowledge"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Introduction" duration="0">
+        <p>In this activity, you will practice your Git knowledge. You will follow a set of steps and will take screenshots of your work as a proof of completing the tasks. You will include all your screenshots in a word file and submit one file.</p>
+<p><strong>Submission format </strong>- You will work individually on this task, however, for one of the steps (reviewing your pull request) you will need to add a friend to your repository and ask them to do this step for you. </p>
+<p><strong>Estimated time</strong>: 1 hour</p>
+<p class="image-container"><img style="width: 155.40px" src="img/708045c26852e378.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Getting set up" duration="0">
+        <h2 is-upgraded>Accounts and installations </h2>
+<ol type="1" start="1">
+<li>We will use Github in this activity. If you do not have a Github account, please create an account at <a href="https://github.com/" target="_blank">https://github.com/</a> before you start.</li>
+<li>Then, make sure that Git is installed on your computer. You can check the version of your git with git --version. If it is not installed, please install it from <a href="https://git-scm.com/downloads" target="_blank">https://git-scm.com/downloads</a></li>
+</ol>
+<h2 is-upgraded>Create a repository and set the permissions</h2>
+<ol type="1" start="3">
+<li>Create a <strong>private</strong> repository in Github. Name your repository as ‘exercise-<em>XX</em>&#39;, where <em>XX</em> is your initials, e.g., John Doe will create exercise-<em>JD</em> repository. Select to create a readme file from the UI.</li>
+</ol>
+<ol type="1" start="4">
+<li>Give access to your friend who will play the reviewer role for you in steps 17-18 of this activity. </li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Configure and setup" duration="0">
+        <h2 is-upgraded>Global and local configs</h2>
+<ol type="1" start="5">
+<li>Now, check the list of the global configs on your computer. Make sure that your Git username and email address are set correctly, before cloning your remote repository to your computer. Take a snapshot of your global configs.</li>
+</ol>
+<ol type="1" start="6">
+<li>Clone your repository on your computer and go to your cloned directly.</li>
+</ol>
+<ol type="1" start="7">
+<li>Now, list all files (including hidden files) in this directory. You should see a hidden folder called ‘.git&#39; which includes all your git related files and information. Take a screenshot of all files (including hidden files) under the .git folder.</li>
+</ol>
+<ol type="1" start="8">
+<li>Check each file under .git and guess what each file is for. Search and learn about the ones that you do not know. There is no need to submit your answer for this step.</li>
+</ol>
+<h2 is-upgraded>Issue and project settings</h2>
+<ol type="1" start="9">
+<li>In your github file create a project (automated kanban with reviews). Give it a name of your choice. Go to the project and remove the auto generated cards from your kanban board.</li>
+</ol>
+<ol type="1" start="10">
+<li>Create an issue of ‘Questions in exercise 1 need to be completed&#39; in your repository and assign it to yourself and to your project, and select a label for it. Check your kanban and make sure that the issue is listed in your project. Remember the ID of the issue you created (We will need this number soon!).</li>
+</ol>
+<p class="image-container"><img style="width: 120.50px" src="img/7fcae725cf4f7fea.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create a develop branch" duration="0">
+        <ol type="1" start="11">
+<li>Check the existing branches in your local repository. You must have a default branch, such as ‘master&#39; branch. If ‘develop&#39; branch does not exist, create a branch and name it ‘develop&#39;. Then, push your branch to the remote repository. Take a screenshot that shows you have two branches in your local and also in your remote repositories.</li>
+</ol>
+<p class="image-container"><img style="width: 310.00px" src="img/fe7cb4eaa45ef57c.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Complete the issue assigned to you" duration="0">
+        <ol type="1" start="12">
+<li>Your task ‘Questions in exercise 1 need to be completed&#39; is to write answers for two questions. Question 1 - What is the .gitignore file and how can you create it? Question 2 - Search and find a feature or a useful tip about Git that we have not touched in class and describe it. You will complete these two questions in two separate commands. For example, answer the first question and commit it, and then answer the second question. You can write your answers in a .md or .html file that you create. Let&#39;s start. </li>
+</ol>
+<ol type="1" start="13">
+<li>Move your task to in-progress and start your work. Create a local branch for your issue. For example: git checkout -b issue-<em>ID</em>/exercise-answers, where <em>ID</em> is your issue number. You can find it your issue tab or in your kanban.</li>
+</ol>
+<ol type="1" start="14">
+<li>In this newly created branch, create a file and write your answer for the first question. Use add and commit commands with proper message to commit your work, e.g., git add answers.md, and then git commit -m ‘answer to first question is completed&#39;.</li>
+</ol>
+<ol type="1" start="15">
+<li>Now, add your answer to the second question and commit it with a proper message. Check the logs using git log and take a screenshot.</li>
+</ol>
+<ol type="1" start="16">
+<li>Now, push your issue branch to your remote repository, e.g., git push origin issue-<em>ID</em>/exercise-answers</li>
+</ol>
+<p class="image-container"><img style="width: 199.02px" src="img/710504003a63e87b.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Pull Request and Merges" duration="0">
+        <ol type="1" start="17">
+<li>Go to your remote repository and create a pull request to merge your changes to the <strong>develop</strong> branch. When creating the pull request, assign it to your project, and select the reviewer to be your friend (who already has accepted your invite to join your repository). For the description use &#34;<strong>resolves #</strong><strong><em>ID</em></strong>&#34;, where <em>ID</em> is the ID of the issue that you have completed.</li>
+</ol>
+<ol type="1" start="18">
+<li>Go to your Kanban and make sure that the issue is in the proper column, waiting for a review. Wait until the reviewer approves your changes. After the review, your issue should be in the reviewed column.</li>
+</ol>
+<ol type="1" start="19">
+<li>After your pull request is approved, it is time to merge it. Go to the pull request tab and squash and merge the commits. Merge commit comments and add one single readable comment, and then do the merge. After this step, your issue must be in the done column in your kanban. Take a screenshot of your kanban.</li>
+</ol>
+<ol type="1" start="20">
+<li>Check that the codes in your develop branch includes your changes, and then delete your branch from the remote repository, and also from your local repository, e.g., with git branch -d &lt;name of the branch&gt;. Note that before deleting your local branch, you should first switch to a different branch, e.g., develop branch. Take a screenshot showing that your local and remote repositories both have only two branches.</li>
+</ol>
+<ol type="1" start="21">
+<li>Pull the the newly added files to the develop branch from the remote repository to update your local develop branch. Now, both your remote and local repositories should be up to date.</li>
+</ol>
+<ol type="1" start="22">
+<li>Finally, take a screenshot of the commit history for your develop branch. It should only contain one commit for the both changes (commits) that you merged.</li>
+</ol>
+<p class="image-container"><img style="width: 201.96px" src="img/1a6f5a52e73759fe.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Congratulations" duration="0">
+        <ol type="1" start="23">
+<li>You finished your task. Include all your screenshots in a word file and submit one file.</li>
+</ol>
+<p class="image-container"><img style="width: 311.00px" src="img/f0607c85b2d88933.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
