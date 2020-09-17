@@ -1,0 +1,165 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Alice &amp; Bob in Gitland!</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="alice-bob-in-gitland-"
+                  title="Alice &amp; Bob in Gitland!"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Introduction" duration="0">
+        <p>In this activity, you will practice your Git knowledge related to <strong>making changes in your local and remote repositories.</strong> You will follow a set of steps and will take screenshots of your work as a proof of completing the tasks. You will include all your screenshots in a word file and submit your file. You should work in pairs (2 people) on this activity. </p>
+<p><strong>Estimated time</strong>: 1 hour</p>
+<p class="image-container"><img style="width: 76.50px" src="img/545e291df6b421ee.png"><img style="width: 90.15px" src="img/c39033fd616afaa.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Getting set up" duration="0">
+        <h2 is-upgraded>Accounts and installations </h2>
+<ol type="1" start="1">
+<li>We will use Github in this activity. If you do not have a Github account, please create an account at <a href="https://github.com/" target="_blank">https://github.com/</a> before you start.</li>
+<li>Then, make sure that Git is installed on your computer. You can check the version of your git with git --version. If it is not installed, please install it from <a href="https://git-scm.com/downloads" target="_blank">https://git-scm.com/downloads</a></li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Let&#39;s start" duration="0">
+        <p>Alice and Bob are planning to manage their Web development project using a popular version control system called Git. They want to start working in a simple way, with a remote repository that they both can commit and push changes to. Here is what Alice and Bob will do: </p>
+<p class="image-container"><img style="width: 72.50px" src="img/545e291df6b421ee.png"></p>
+<ol type="1" start="3">
+<li><strong>Alice</strong> will create a <em>private</em> repository in GitHub, called &#34;HelloGit&#34;. When creating the repository, Alice will create a README file for the project. Alice will give Bob a contributor access to the repository. </li>
+</ol>
+<p class="image-container"><img style="width: 624.00px" src="img/f25d025a00cb3e86.png"></p>
+<p><strong>@Alice</strong>: when creating a repository, there is an option that you can select to add a README file to the repository.</p>
+<p class="image-container"><img style="width: 90.15px" src="img/c39033fd616afaa.png"></p>
+<p><strong>@Bob</strong>: please login to your email connected to your GitHub account and accept the invitation. Then, login to your GitHub and make sure that you have access to the repository.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Clone the repository" duration="0">
+        <ol type="1" start="4">
+<li><strong>Alice</strong> and <strong>Bob</strong> will both open the Git Bash tool and will go to a directory on their computer where they want to store their repository files. <br></li>
+</ol>
+<p class="image-container"><img style="width: 339.00px" src="img/34093abecdca9ef7.png"></p>
+<ol type="1" start="5">
+<li><strong>Alice</strong> and <strong>Bob</strong> will clone the remote project and create their own local working directory. You can find the url of your repository online in your GitHub account.</li>
+</ol>
+<p class="image-container"><img style="width: 624.00px" src="img/181272d875d6bf47.png"></p>
+<p>git <strong>clone</strong> https://github.com/Your-UserName/Repository-Name.git</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Configure and setup" duration="0">
+        <p class="image-container"><img style="width: 82.00px" src="img/c39033fd616afaa.png"><img style="width: 78.08px" src="img/545e291df6b421ee.png"></p>
+<ol type="1" start="6">
+<li><strong>Alice</strong> and <strong>Bob</strong>, if you have not set your account information on the computer you are working on, the command line will prompt you to enter your username and password. You can list the current git configuration on your computer using </li>
+</ol>
+<p>git <strong>config</strong> --global --list</p>
+<ol type="1" start="7">
+<li>You can set your account information on the computer. This is very useful when you are working on your personal computer. When working on any public computers such as lab machines, I would ignore this step and instead each time the system asks for a username and password, I will enter them everytime. You can set your username and email address in this way: </li>
+</ol>
+<p>git config <strong>--global user.name</strong> ‘Alice-Liddle&#39;</p>
+<p>git config <strong>--global user.email</strong> ‘<a href="mailto:alice@wonderland.ca" target="_blank">alice@wonderland.ca</a>&#39;</p>
+<p>Note that the above commands will set your username and password in your global settings. To view or change the configurations local to your repository, you can use <strong>--local</strong> in your commands.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Updating your local and remote repository" duration="0">
+        <p class="image-container"><img style="width: 71.50px" src="img/c39033fd616afaa.png"></p>
+<h2 is-upgraded>Updating local repository</h2>
+<ol type="1" start="8">
+<li>Bob will create an index.html file in his local directory, with the following content:</li>
+</ol>
+<pre>&lt;html&gt;&lt;head&gt;&lt;meta name=&#34;author&#34; content=&#34;Cheshire Cat&#34;&gt;&lt;/head&gt;&lt;body&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+<ol type="1" start="9">
+<li>Bob will use <strong>git add</strong> command to add the file to the <strong>staging </strong>area. </li>
+</ol>
+<p>git <strong>add</strong> index.html</p>
+<p><strong>@Bob</strong>: in every step, you can use <strong>git status</strong> to check the status of your project.</p>
+<p>Bob can continue working on the index file or other files and add them all to the staging area. When ready, Bob can commit his changes to his local repository using </p>
+<p>git <strong>commit</strong> -m ‘descriptive message&#39;</p>
+<p>Each commit will take a snapshot of the project and store it in the local repository. Bon can make one or more commits before he decides to push his changes to the remote repository.</p>
+<h2 is-upgraded>Updating the remote repository<img style="width: 71.50px" src="img/c39033fd616afaa.png"></h2>
+<ol type="1" start="10">
+<li>The changes that Bob has made are still on his own local repository. To update the remote repository on GitHub he has to do one more step, after which other members of the team can see the changes in the GitHub repository. Bob has to <strong>push</strong> his changes to the remote repository.</li>
+</ol>
+<p>git <strong>push</strong> origin master</p>
+<p>master is the name of your default <strong>branch</strong>, and origin is the default name for your remote <strong>repository</strong>. In this case, you are pushing your changes to the master branch in your remote repository.</p>
+<p>Alice, it is now your turn! </p>
+<h2 is-upgraded>Updating the local and remote repository</h2>
+<p class="image-container"><img style="width: 78.08px" src="img/545e291df6b421ee.png"></p>
+<ol type="1" start="11">
+<li>Alice will follow similar steps (9-10) and will create and push product.html file with a content of her choice to the remote repository.</li>
+</ol>
+<ol type="1" start="12">
+<li>Now, Alice and Bob both should see index.html and product.html in the remote repository, but their local repositories do not have all the files!</li>
+</ol>
+<h2 is-upgraded>Get All Files </h2>
+<p class="image-container"><img style="width: 71.50px" src="img/c39033fd616afaa.png"><img style="width: 78.08px" src="img/545e291df6b421ee.png"></p>
+<ol type="1" start="13">
+<li>Now, Alice and Bob, will pull the remote repository to sync their local repository with the remote repository: </li>
+</ol>
+<p>git <strong>pull</strong> origin master. </p>
+<p>You know the meaning of <strong>origin</strong> and <strong>master</strong> at this point! If you cannot remember, go to step 10.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Conflict Resolution" duration="0">
+        <p>Alice and Bon probably did not experience any file conflict when pushing their changes to the repository, because they were working on different files. But what happens if they were working on the same file?</p>
+<p>When you push your changes, git will try to merge changes done by different people, automatically. However, some changes cannot be merged automatically, and they require developers attention. In such cases, you may see a conflict error message when pushing your changes. The error may look like this:</p>
+<p class="image-container"><img style="width: 602.50px" src="img/5d7d10f9f49cc61d.png"></p>
+<p>To solve the issue, before completing your push, you have to pull the changes from the remote repository to your local repository and merge them manually. You can open the file that has conflict in it using an editor and see the two versions that need to be merged. It may look like this:</p>
+<p class="image-container"><img style="width: 603.50px" src="img/77b6fde44993b236.png"></p>
+<p>After deciding what should be the final code in the conflict section, you should get rid of the head, separator, and end markers (&lt;&lt;&lt;&lt;&lt;  =======   &gt;&gt;&gt;&gt;&gt;&gt;).</p>
+<p class="image-container"><img style="width: 140.95px" src="img/1a6f5a52e73759fe.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Congratulations" duration="0">
+        <ol type="1" start="14">
+<li>You finished your task. Keep practicing!</li>
+</ol>
+<p class="image-container"><img style="width: 311.00px" src="img/f0607c85b2d88933.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
