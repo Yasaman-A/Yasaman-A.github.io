@@ -1,0 +1,155 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id=""
+                  title=""
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Introduction" duration="0">
+        <p>In this activity, you will create a virtual machine (VM) on Google Cloud to run a REST API code on node.js and connect your application to a Cloud SQL instance that you will create.</p>
+<p>Students registered in the course can redeem their course credits for Google Cloud platform and use it for the activity and also for their course projects. The instruction to access Google Cloud course credit is provided under Course Information in BlackBoard.</p>
+<p class="image-container"><img style="width: 484.00px" src="img/f125205c531dd07.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create your own VM" duration="0">
+        <p>In this part, you will create a VM on Google Compute Engine.</p>
+<h2 is-upgraded>VM Setup</h2>
+<ol type="1" start="1">
+<li>Go to the Google Cloud console page.</li>
+<li>Check the top of the page and make sure that you have an active project listed in the header bar and your billing account is active for your project.</li>
+</ol>
+<p class="image-container"><img style="width: 272.50px" src="img/222a8a0ec049d8a4.png"></p>
+<p class="image-container"><img style="width: 625.00px" src="img/8f5099de2bedd8c3.png"></p>
+<ol type="1" start="3">
+<li>Go to the Compute Engine tab and create a VM. Here is the detail you may use (vCPU: 2, Operating system: Ubuntu 18.04. Allow http and https traffic to your instance. Let the other parameters to stay in their default levels). Among these, the selection of the operating system is important to make sure that you can follow the commands in this activity. </li>
+</ol>
+<p class="image-container"><img style="width: 351.53px" src="img/9346422334b11ff5.png"></p>
+<ol type="1" start="4">
+<li>Click on save to create your instance and make sure that it is running.Your VM will receive a public IP that you can use to access services running in it.</li>
+</ol>
+<p class="image-container"><img style="width: 624.50px" src="img/be5af9be8ba9d191.png"></p>
+<h2 is-upgraded>Network Setup</h2>
+<ol type="1" start="5">
+<li>If you will run an application that uses special ports, you need to open those ports in the firewall, otherwise, you will not be able to access the service. For this, you need to create new rules in your firewall. To access the firewall configurations, click on the &#34;View network details&#34; from the settings (<img style="width: 20.00px" src="img/cc49ed21c1582b03.png">) of your VM.</li>
+</ol>
+<p class="image-container"><img style="width: 624.00px" src="img/1f53579ad72a7e8f.png"></p>
+<ol type="1" start="6">
+<li>Create a new rule, and assign a name for your rule, and add that in the target tags as well. Set the source IP to 0.0.0.0/0 to let clients be able to access your application from anywhere. Set the ports you want to open, e.g., 80, 443, 8080, 8081, 3306, under ‘Protocols and ports&#39; or you may open all ports (not recommended).</li>
+</ol>
+<h2 is-upgraded><img style="width: 521.00px" src="img/657150462fa86b2.png"></h2>
+<ol type="1" start="7">
+<li>After saving your rule, click on the name of your VM instance to edit its properties. Add the rule you defined to the network tags of your VM.</li>
+</ol>
+<p class="image-container"><img style="width: 501.00px" src="img/8277e1dfa370157b.png"></p>
+<h2 is-upgraded>Setup Static IP</h2>
+<ol type="1" start="8">
+<li>When you start your VM, it receives a public IP address, but the address may change when you stop and restart the VM instance. If you want to keep your VM IP address to stay the same, you can assign a static IP address. This can be done in the network tab (right above the Firewall tab that you just worked with).</li>
+</ol>
+<ol type="1" start="9">
+<li>Reserve a standard static IP V4 address and attach it to your VM instance by selecting the name of your instance from the list. (Later, you can use this IP address to define the authorized networks for your CLoud SQL instance.)</li>
+</ol>
+<p class="image-container"><img style="width: 480.50px" src="img/6121d73f392bdad2.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create Your Database" duration="0">
+        <p>The following steps will help you to set up your Cloud SQL database. Here is the reference <a href="https://cloud.google.com/sql/docs/mysql/quickstart" target="_blank">documentation</a> that you may need.</p>
+<h2 is-upgraded>Create your SQL instance</h2>
+<ol type="1" start="10">
+<li>Go to the Cloud SQL Instances page in the Google Cloud Console.<br><img style="width: 237.00px" src="img/340b4ebe0f933e13.png"></li>
+</ol>
+<ol type="1" start="11">
+<li>If you have more than one project in your Cloud account, select your project and click Continue.</li>
+</ol>
+<p class="image-container"><img style="width: 352.00px" src="img/47255de7b8a301cd.png"></p>
+<ol type="1" start="12">
+<li>Click Create Instance.</li>
+</ol>
+<p class="image-container"><img style="width: 555.50px" src="img/5307f8aa36f4a8a8.png"></p>
+<ol type="1" start="13">
+<li>Click MySQL.</li>
+<li>Enter my-instance for Instance ID.</li>
+<li>Enter a password for the root user. (You can also create new users with a password.)</li>
+<li>Use the default values for the other fields.</li>
+<li>Click Create.</li>
+<li>Go to the database tab and create a new database for your project, e.g., my_database.</li>
+</ol>
+<p class="image-container"><img style="width: 576.50px" src="img/7687f7d7f18e03bf.png"></p>
+<h2 is-upgraded>Connect to your instance using the mysql client in Cloud Shell</h2>
+<ol type="1" start="19">
+<li>Open Cloud Shell by clicking the Cloud Shell icon (<img alt="Cloud Shell icon" style="width: 18.00px" src="img/d99d0d2e7df84264.png">) in the upper right corner.</li>
+</ol>
+<p class="image-container"><img style="width: 624.00px" src="img/3fbce53f3a193921.png"></p>
+<p class="image-container"><img style="width: 624.00px" src="img/a1f606bd3bd6e88b.png"></p>
+<ol type="1" start="20">
+<li>Make sure that your project is selected correctly (the name in color) in the Cloud Shell. If not, you can see the list of your projects and select a project using the following gCloud commands:</li>
+</ol>
+<p><code>gcloud projects list</code></p>
+<p><code>gcloud config set project</code> my-project</p>
+<ol type="1" start="21">
+<li>Now connect to your mysql database, using gCloud commands. Enter the name of instance and the database user with which you want to connect to the database. Then enter the password.</li>
+</ol>
+<p><code>gcloud sql connect</code> myinstance <code>--user=</code>root</p>
+<ol type="1" start="22">
+<li> You can now enter mysql commands to use an existing database (<code>use</code> my_database), or see the existing databases (<code>show databases;</code>).</li>
+</ol>
+<ol type="1" start="23">
+<li>You can list the existing tables (<code>show tables;</code>) or create a table. This example here, is creating a table called rest_emp with four columns of name, phone, email, address.</li>
+</ol>
+<p><code>CREATE TABLE rest_emp (id INT AUTO_INCREMENT PRIMARY KEY, name varchar(255) not null, phone varchar(12), email varchar(255) not null, address varchar(255)not null);</code></p>
+<ol type="1" start="24">
+<li>You can enter data into your table. For example:</li>
+</ol>
+<p><code>insert into rest_emp(name, phone, email, address) values (&#39;Demo User&#39;, &#39;111 111 1111&#39;, &#39;demo.user@test.com&#39;, &#39;100 Street SW&#39;);</code></p>
+<ol type="1" start="25">
+<li>View the results in your table:</li>
+</ol>
+<p><code>select * from rest_emp;</code></p>
+<h2 is-upgraded>The authorized networks for your database</h2>
+<ol type="1" start="26">
+<li>When your database is ready, make sure that you know the 1) public IP address of your instance, and also 2) the name of your database, 3) the database user and 4) password. You can get the public IP address of your database from the overview page:</li>
+</ol>
+<p class="image-container"><img style="width: 573.59px" src="img/7ae05d647f3922cd.png"></p>
+<ol type="1" start="27">
+<li>If you want to connect to the database from a compute engine VM, you must assign a static IP to your VM and add the IP address of the VM in the list of the authorized networks.</li>
+</ol>
+<p class="image-container"><img style="width: 565.50px" src="img/189ec628750db0e5.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
