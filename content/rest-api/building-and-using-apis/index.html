@@ -1,0 +1,107 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Practice Your REST API Knowledge</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="practice-your-rest-api-knowledge"
+                  title="Practice Your REST API Knowledge"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Introduction" duration="0">
+        <p>In this activity, you will practice working with REST APIs and databases. You will first create rest endpoints and include the address of your server and also the documentation of your endpoints in your submission. Then, in the next step, you will create a single screen application to use one of your endpoints. You will also share the code for the backend and your frontend using Github.</p>
+<p>The submission of the both parts of the activity are due on Nov. 18, 2020.</p>
+<p class="image-container"><img style="width: 433.50px" src="img/7b09ea1a00756849.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Part 1 - Database and REST APIs" duration="0">
+        <ol type="1" start="1">
+<li>You will use Google Cloud platform (or a cloud provider of your choice) for this activity. For using Google Cloud platform, you can create an account and redeem your course credit  of 50 $ and add it to your account. The instruction on how to redeem your course credit is available in your course homepage (BlackBoard → Course Information).</li>
+<li><strong>Database - </strong>You will create a database with a table that contains a list of courses, e.g., 5 courses of your choice. You will provide REST endpoints that allow users to search, add, and update the table. You may choose to implement this with any of the architectures discussed in the class, deploy your mysql server on Google Compute Engine or on Cloud SQL, or any cloud platform of your choice.</li>
+<li>Each course in the database is represented by a course <em>code</em>, course <em>name</em>, and a <em>description</em>. The description field is optional and can be empty. Other fields are mandatory. For example, a record in your database may look  like this: &#39;COMP3504&#39;, ‘Software Engineering&#39;, ‘Covers software engineering practices through building a complete application with a front-end and a back-end&#39;.</li>
+<li><strong>REST endpoints</strong> - Create three REST endpoints: <strong>A) </strong>Provide a REST endpoint that allows users to search for courses by their code or name. Implementing one of these options is enough. <strong>B) </strong>Provide a REST endpoint that allows users to add new courses to the database. <strong>C) </strong>Provide a REST endpoint that allows users to update the description of a course.</li>
+<li>Test your REST endpoints with Postman and make sure that they work correctly.</li>
+<li>Include the documentation of your REST endpoints in your submission. Your documentation should include the base URL (your server IP and Port), and also the list of your endpoints with the description of what they do and what parameters they need.</li>
+</ol>
+<p class="image-container"><img style="width: 277.00px" src="img/9df32d9e31cc4210.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Part 2 - Application to build" duration="0">
+        <ol type="1" start="7">
+<li>You will create a single screen (one page) front-end application. Call your rest endpoint to  add new courses to the list. Remember that the course code and the name are mandatory, but the description is an optional field.</li>
+<li>Test your application with different inputs and make sure it works correctly.</li>
+<li>Remember that if you host your REST endpoints on a server without https setting, you may not be able to call them from a platform like Snack that is hosted with https. You should still be able to call your non-https endpoints from Postman or from your local development environment.</li>
+</ol>
+<p class="image-container"><img style="width: 364.29px" src="img/2850de89140aed73.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Congratulations!" duration="0">
+        <ol type="1" start="10">
+<li>Share your backend and frontend code by Github (username: Yasaman-A). You may use one Github repository with two separate folders for your backend and frontend code. </li>
+</ol>
+<ol type="1" start="11">
+<li>Prepare a list of all your endpoints, and their parameters and descriptions (Similar to the table in page #2 of the &#34;Connect to API from your application&#34; lecture slides). Include this in the readme file of your Github repository.  To use your endpoints, I need to know your base URL (e.g., the IP and port of your server). Make sure to include this in your submission.</li>
+<li>The following table includes the marking guideline.</li>
+</ol>
+<table>
+<tr><td colspan="1" rowspan="1"><p><strong>Item</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Weight</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>All Endpoints are defined properly and they work correctly with the backend database.</p>
+<p>API for searching a course </p>
+<p>API for adding a course</p>
+<p>API for updating a course</p>
+</td><td colspan="1" rowspan="1"><p>20</p>
+<p>20</p>
+<p>20</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>API documentation is provided. You may include this in your </p>
+</td><td colspan="1" rowspan="1"><p>10</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Front end code is designed properly and it works correctly with the REST endpoints</p>
+</td><td colspan="1" rowspan="1"><p>20</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Code for the backend and frontend is submitted</p>
+</td><td colspan="1" rowspan="1"><p>10</p>
+</td></tr>
+</table>
+<p class="image-container"><img style="width: 313.50px" src="img/f5e1af36aa70a87a.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
