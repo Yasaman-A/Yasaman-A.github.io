@@ -143,6 +143,75 @@
 
       </google-codelab-step>
     
+      <google-codelab-step label="REST APIs on Compute Engine" duration="0">
+        <p>We are going to setup a restAPIs that are written Express JS and you can run them on a node JS environment. To do this, login to your VM and let&#39;s set up nodeJs and also download the given sample code from Github and run it. Click on SSH to login to your machine:</p>
+<p class="image-container"><img style="width: 556.50px" src="img/c6fa472fd9af4cad.png"></p>
+<h2 is-upgraded>Setting up Node on Ubuntu 18.04</h2>
+<ol type="1" start="1">
+<li>When you start a new operating system, you would normally update it by running this command: </li>
+</ol>
+<p><code>sudo apt update</code></p>
+<ol type="1" start="2">
+<li>Run the following commands. (Here is a <a href="https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04" target="_blank">reference</a> that you may use.)</li>
+</ol>
+<p><code>sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates</code></p>
+<p><code>curl -sL</code><a href="https://deb.nodesource.com/setup_12.x" target="_blank"><code> https://deb.nodesource.com/setup_12.x</code></a><code> | sudo -E bash -</code></p>
+<p><code>sudo apt-get install -y nodejs</code></p>
+<ol type="1" start="3">
+<li>To confirm your installation, check the version of your Node using:</li>
+</ol>
+<p><code>nodejs -v</code></p>
+<h2 is-upgraded>Setting up Git on Ubuntu</h2>
+<ol type="1" start="4">
+<li>Install Git on your system. To do this, run the following commands. (Here is a <a href="https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-18-04-quickstart" target="_blank">document</a> you may use.)</li>
+</ol>
+<p><code>sudo apt install git</code></p>
+<p><code>git --version</code></p>
+<h2 is-upgraded>Download and Run the Sample Code</h2>
+<ol type="1" start="5">
+<li>Clone the Git repository to get the sample code:</li>
+</ol>
+<p><code>git clone</code><a href="https://github.com/Yasaman-A/rest-API-examples.git" target="_blank"><code> https://github.com/Yasaman-A/rest-API-examples.git</code></a></p>
+<p><code>cd rest-API-examples/</code></p>
+<ol type="1" start="6">
+<li>The code requires your database credentials. These need to be added to a file called .env (which you should create). </li>
+<li>Create the .env file under your rest-API-examples folder and open it to modify it:</li>
+</ol>
+<p><code>touch .env</code></p>
+<p><code>nano .env</code></p>
+<ol type="1" start="8">
+<li>Add your database information to the .env file, e.g., </li>
+</ol>
+<p><code>DB_HOST=&#34;136.777.888.55:3306&#34; </code></p>
+<p><code>DB_USER=&#34;root&#34; </code></p>
+<p><code>DB_NAME=&#34;my_database&#34; </code></p>
+<p><code>DB_PASS=&#34;SecReTP@ssw0rd&#34;</code></p>
+<ol type="1" start="9">
+<li>Save your .env file. To confirm the file content, you can view the content using the &#34;cat&#34; command:</li>
+</ol>
+<p><code>cat .env</code></p>
+<ol type="1" start="10">
+<li>The dependencies are listed in the package.json file. To install the dependencies, run:</li>
+</ol>
+<p><code>npm install</code></p>
+<ol type="1" start="11">
+<li> Now, you can start the code by:</li>
+</ol>
+<p><code>npm start</code></p>
+<ol type="1" start="12">
+<li>You should be able to access the rest endpoints. Open your browser or your Postman and submit a Get request to the /api/emp endpoint. For example:</li>
+</ol>
+<p><a href="http://serverip:8080/api/emp" target="_blank">http://serverIP:8080/api/emp</a></p>
+<ol type="1" start="13">
+<li>If your VM and database is up and you still do not get a response, the potential problem could be that the setting of the firewall is not done properly and port 8080 is not accessible. Another source of issue could be that the information in the .env file is not entered properly. </li>
+</ol>
+<ol type="1" start="14">
+<li>In the setup we did in this activity, the https is not set up on the server. Therefore, you may not be able to call these endpoints from a platform (like Snack) that is already running on https. You should still be able to call and test your endpoints from Postman or the front end code you write locally.</li>
+</ol>
+
+
+      </google-codelab-step>
+    
   </google-codelab>
 
   <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
