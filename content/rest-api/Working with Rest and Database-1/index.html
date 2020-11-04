@@ -79,7 +79,7 @@
     
       <google-codelab-step label="Create Your Database" duration="0">
         <p>The following steps will help you to set up your Cloud SQL database. Here is the reference <a href="https://cloud.google.com/sql/docs/mysql/quickstart" target="_blank">documentation</a> that you may need.</p>
-<h2 is-upgraded>Create your SQL instance</h2>
+<h2 is-upgraded>Database on Cloud SQL</h2>
 <ol type="1" start="10">
 <li>Go to the Cloud SQL Instances page in the Google Cloud Console.<br><img style="width: 237.00px" src="img/340b4ebe0f933e13.png"></li>
 </ol>
@@ -182,9 +182,10 @@
 <ol type="1" start="8">
 <li>Add your database information to the .env file, e.g., </li>
 </ol>
-<p><code>DB_HOST=&#34;136.777.888.55:3306&#34; </code></p>
-<p><code>DB_USER=&#34;root&#34; </code></p>
-<p><code>DB_NAME=&#34;my_database&#34; </code></p>
+<p><code>DB_HOST=&#34;136.777.888.55&#34;</code></p>
+<p><code>DB_PORT=&#34;3306&#34;</code></p>
+<p><code>DB_NAME=&#34;my_database&#34;</code></p>
+<p><code>DB_USER=&#34;root&#34;</code></p>
 <p><code>DB_PASS=&#34;SecReTP@ssw0rd&#34;</code></p>
 <ol type="1" start="9">
 <li>Save your .env file. To confirm the file content, you can view the content using the &#34;cat&#34; command:</li>
