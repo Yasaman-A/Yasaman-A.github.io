@@ -1,0 +1,238 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id=""
+                  title=""
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Connecting to Your Firebase Project" duration="0">
+        <ol type="1" start="4">
+<li>Last but not least, you need to create a Firebase project and add your project information to the firebase config in the project. Go to <a href="https://firebase.google.com" target="_blank">https://firebase.google.com</a> and click &#34;Go to Console&#34; in the top right. Create the new project and set your region. </li>
+<li>Go to Console and create a new project.</li>
+</ol>
+<p class="image-container"><img style="width: 421.50px" src="img/8db579adf5bcbf3f.png"></p>
+<ol type="1" start="6">
+<li>Add your project name:</li>
+</ol>
+<p class="image-container"><img style="width: 309.50px" src="img/9483699777ab06b.png"></p>
+<ol type="1" start="7">
+<li>You can enable Google Analytics for your project. Then continue. If you choose to have Google Analytics, you should create a account to where your data should be stored.</li>
+<li>Select your location and then read and accept the agreements.</li>
+</ol>
+<p class="image-container"><img style="width: 432.28px" src="img/930325feaa2da14.png"></p>
+<p class="image-container"><img style="width: 200.38px" src="img/a0e25a4772f363ca.png"></p>
+<ol type="1" start="9">
+<li>Now, we need to create an App. You can create a Web app and use the information for your project (You can still continue and view your output on mobile devices)</li>
+</ol>
+<ol type="1" start="10">
+<li>Now, Register your app:</li>
+</ol>
+<p class="image-container"><img style="width: 359.00px" src="img/d1bd604cf8c19a9f.png"></p>
+<ol type="1" start="11">
+<li>The information about your project is given. You can copy and use it in your project. If you forget to copy the information, it can be accessed from the setting tab, as well.</li>
+</ol>
+<p class="image-container"><img style="width: 334.00px" src="img/60975f67fc329fb1.png"></p>
+<p class="image-container"><img style="width: 516.36px" src="img/277c26a8b8635e41.png"></p>
+<p class="image-container"><img style="width: 394.50px" src="img/f8e7d0e276f5c50c.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Setup Authentication with Firebase" duration="0">
+        <ol type="1" start="12">
+<li>Go to the authentication tab, and let&#39;s set it up.</li>
+</ol>
+<p class="image-container"><img style="width: 354.50px" src="img/8ea1ed000ad42289.png"></p>
+<ol type="1" start="13">
+<li>You can enable your authentication method. The given code sample works with Email/Password. So, let&#39;s enable it!</li>
+</ol>
+<p class="image-container"><img style="width: 438.33px" src="img/b84d477353e3898.png"></p>
+<p class="image-container"><img style="width: 420.50px" src="img/c07d0768b2b89c2e.png"></p>
+<ol type="1" start="14">
+<li>You can add a new user to your database, or use the given code later on to create a user in Firebase!</li>
+</ol>
+<p class="image-container"><img style="width: 485.50px" src="img/35bf5a6034c65987.png"></p>
+<ol type="1" start="15">
+<li>You are all set. Make sure that you are using the free tier account and your firebase in not charging your Google Cloud personal account. </li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Steps to Change the Code" duration="0">
+        <ol type="1" start="16">
+<li>To start making changes, create a Context to store the authentication information. Add the following code to the ‘src/contexts/auth.jsx&#39; file that you should create:</li>
+</ol>
+<pre><code>import React from &#39;react&#39;;
+const AuthContext = React.createContext();
+export default AuthContext;</code></pre>
+<ol type="1" start="17">
+<li>In the App.js file, define a state to use with the auth context to store if the user is validated.</li>
+</ol>
+<pre><code>const [authenticated, setAuthenticated] = useState(false);</code></pre>
+<ol type="1" start="18">
+<li>Now add a context provide around the NavigationContainer to pass setter and getter of your authenticated state. Note that the import statements are not listed in the steps discussed below. You should add them yourself. You can get help from the completed code sample shared with you.</li>
+</ol>
+<pre><code> &lt;AuthContext.Provider value=&#123;&#123; authenticated, setAuthenticated }}&gt;
+   &lt;NavigationContainer&gt;
+...
+ &lt;/NavigationContainer&gt;
+   &lt;/AuthContext.Provider&gt;</code></pre>
+<ol type="1" start="19">
+<li>Now, let&#39;s divide the pages into two groups. Pages that user can view without being authenticated, e.g., Login, Signout, and the pages that the user can only see after being authenticated, e..g, Home, Detail. Pages. We will put these pages into two separate Stack.Navigators and control the visibility of each group using the authenticated state.</li>
+</ol>
+<pre><code> &lt;AuthContext.Provider value=&#123;&#123; authenticated, setAuthenticated }}&gt;
+   &lt;NavigationContainer&gt;
+     {authenticated ? (
+       &lt;Stack.Navigator&gt;
+         &lt;Stack.Screen name=&#34;Home&#34; component={Home} /&gt;
+         &lt;Stack.Screen name=&#34;Details&#34; component={Details} /&gt;
+       &lt;/Stack.Navigator&gt;
+       ) : (
+       &lt;Stack.Navigator&gt;
+         &lt;Stack.Screen name=&#34;Login&#34; component={Login} /&gt;
+   &lt;Stack.Screen name=&#34;Signup&#34; component={Signup} /&gt;
+
+       &lt;/Stack.Navigator&gt;
+       )}
+     &lt;/NavigationContainer&gt;
+   &lt;/AuthContext.Provider&gt;</code></pre>
+<ol type="1" start="20">
+<li>You need to call <code>signInWithEmailAndPassword of</code> Firebase in your Login page for authentication. Here is the method that does the authentication. If the authentication is successful, you can <code>setAuthenticated</code> to true, to use the first stack navigation that you defined which contains the home and details pages. The code shown in the completed example is more extensive than what is shown here, but all the additions are for showing error messages that you can use.</li>
+</ol>
+<pre><code> const handleAuth = () =&gt; {
+   firebase.auth().signInWithEmailAndPassword(email, password)
+     .then(() =&gt; {
+       firebase.auth().onAuthStateChanged(
+         (user) =&gt; {
+           if (user != null) {
+             setAuthenticated(true);
+           }
+         },
+       );
+     })
+     .catch((error) =&gt; {
+       console.log(error.message);
+     });
+ };</code></pre>
+<ol type="1" start="21">
+<li>To access the <code>setAuthenticated</code> method from the context, the Login page needs to extract it from the context and use it.</li>
+</ol>
+<pre><code>const { setAuthenticated } = React.useContext(AuthContext);</code></pre>
+<ol type="1" start="22">
+<li>The sign up page also needs to use firebase to register users. The code shown in the completed example, includes the lines needed for showing error and success messages.</li>
+</ol>
+<pre><code>const createUser = () =&gt; {
+firebase.auth().createUserWithEmailAndPassword(email, password)
+     .then(() =&gt; {
+       //show success message.
+     })
+     .catch((error) =&gt; {
+       //show error messages.
+     });
+ };</code></pre>
+<ol type="1" start="23">
+<li>After you register the user, you may decide to let user automatically into the the app. IN that can, you can get the <code>setAuthenticated</code> from the context and set it to true, or you may want to direct the user to the login page, in that case you can use navigation to do this. The given code example, does not do any of these. After a successful user registration, it only asks users to go to the login page and login in the application.</li>
+</ol>
+<pre><code>const createUser = () =&gt; {
+   firebase.auth().createUserWithEmailAndPassword(email, password)
+     .then(() =&gt; {
+       setErrorMessage(&#39;&#39;);
+       setMessage(&#39;You registered successfully. Please login.&#39;);
+     })
+     .catch((error) =&gt; {
+       setErrorMessage(error.message);
+       setMessage(&#39;&#39;);
+     });
+ };</code></pre>
+<ol type="1" start="24">
+<li>The signup page and also the login page both can benefit from some input validation. The input validation is not done extensively. Some validation is done. For example, the code in the signup page checks if the password and the repeat password entered are the same.</li>
+</ol>
+<pre><code> const checkPassword = () =&gt; {
+   if (password === repeatPassword) {
+     return true;
+   }
+   setErrorMessage(&#39;Password repeat does not match.&#39;); setMessage(&#39;&#39;);
+   return false;
+ };</code></pre>
+<ol type="1" start="25">
+<li>We can also benefit from the returned error messages that firebase services are providing. For example, if the email address is not formatted properly, or the password does not meet the required password length, Firebase returns error messages, that we can use to show them to the user. This is used in the catch section. Note that you can if you do not like the strings returned from Firebase, you can get them and then return an error message of your choice.</li>
+</ol>
+<pre><code> const createUser = () =&gt; {
+   firebase.auth().createUserWithEmailAndPassword(email, password)
+     .then(() =&gt; {
+       setErrorMessage(&#39;&#39;);
+       setMessage(&#39;You registered successfully. Please login.&#39;);
+     })
+     .catch((error) =&gt; {
+       setErrorMessage(error.message);
+     });
+ };</code></pre>
+<ol type="1" start="26">
+<li>If you noticed in the completed example, the Header component is receiving an instance of the <code>setAuthenticated</code> method of the context, for the signout. In the previous implementation we were navigating to the Login page. Note that because of the two stack navigation that we have and the fact that we are controlling them with a state, if we set the value of the state to false, basically the user will be forced to use the other stack navigation which starts from the Login page! </li>
+</ol>
+<pre><code>   &lt;View style={styles.header}&gt;
+     &lt;Button mode=&#34;text&#34; color=&#34;#ffffff&#34; icon=&#34;location-exit&#34;
+     onPress={
+         () =&gt; {
+             setAuthenticated(false);
+             }
+       }&gt; Sign Out &lt;/Button&gt;
+   &lt;/View&gt;</code></pre>
+<ol type="1" start="27">
+<li>So both the Home and Details pages extract the method from context and pass it to the Header component to be able to handle this signout process.</li>
+</ol>
+<pre><code>const { setAuthenticated } = React.useContext(AuthContext);
+Header setAuthenticated={setAuthenticated} style={styles.header} /&gt;</code></pre>
+<ol type="1" start="28">
+<li>Next, add your Firebase project information from Step 11  to your project configs.</li>
+</ol>
+<pre><code>const firebaseConfig = {
+   apiKey: &#39;Add your api key here!&#39;,
+   projectId: &#39;add your project id here&#39;,
+   appId: &#39;add your app id here!&#39;,
+};</code></pre>
+<ol type="1" start="29">
+<li>This document covered the important sections of the code for using Firebase auth methods. The completed code is available in the login-with-firebase branch of my react-native-examples Gihub repository: <a href="https://github.com/Yasaman-A/react-native-examples" target="_blank">https://github.com/Yasaman-A/react-native-examples</a> . You should be able to get the code and run it. After you download the code, if you run npm install, it will install all the required dependencies of the code. Then you can use expo to start the project.</li>
+</ol>
+<pre><code>nmp start;
+expo start;</code></pre>
+<ol type="1" start="30">
+<li>Here is the completed code on Expo Snack: <a href="https://snack.expo.io/@yamannejad/login-with-firebase" target="_blank">https://snack.expo.io/@yamannejad/login-with-firebase</a> </li>
+</ol>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
