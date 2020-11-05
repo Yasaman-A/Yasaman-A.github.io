@@ -82,42 +82,44 @@
 <ol type="1" start="10">
 <li>Login to your VM using ssh, and first update your system:</li>
 </ol>
-<p><code>sudo apt update</code></p>
+<pre><code>sudo apt update</code></pre>
 <p class="image-container"><img style="width: 556.26px" src="img/1097558232847d48.png"></p>
 <ol type="1" start="11">
 <li>Install MySql. (This <a href="https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04" target="_blank">document</a> may also help you with the next few steps.)</li>
 </ol>
-<p><code>sudo apt -y install mysql-server </code></p>
-<p><code>sudo mysql_secure_installation</code></p>
+<pre><code>sudo apt -y install mysql-server 
+sudo mysql_secure_installation</code></pre>
 <ol type="1" start="12">
 <li> In your installation process, you may keep the root user, but make sure to assign a password to your root users. For security reasons, do not leave the password to be empty.</li>
 </ol>
 <ol type="1" start="13">
 <li>When the installation is done, you may connect to your mysql environment using:</li>
 </ol>
-<p><code>sudo mysql -u root -p</code></p>
+<pre><code>sudo mysql -u root -p</code></pre>
 <ol type="1" start="14">
 <li>You can now use sql command to create databases, tables, and insert some records.  You can now enter mysql commands to use an existing database (<code>use</code> my_database), or see the existing databases (<code>show databases;</code>). </li>
 </ol>
+<pre><code>show databases;
+use my_database;</code></pre>
 <ol type="1" start="15">
 <li>You can list the existing tables (<code>show tables;</code>) or create a table. This example here, is creating a table called rest_emp with four columns of name, phone, email, address.</li>
 </ol>
-<p><code>CREATE TABLE rest_emp (id INT AUTO_INCREMENT PRIMARY KEY, name varchar(255) not null, phone varchar(12), email varchar(255) not null, address varchar(255)not null);</code></p>
+<pre><code>CREATE TABLE rest_emp (id INT AUTO_INCREMENT PRIMARY KEY, name varchar(255) not null, phone varchar(12), email varchar(255) not null, address varchar(255)not null);</code></pre>
 <ol type="1" start="16">
 <li>You can enter data into your table. For example:</li>
 </ol>
-<p><code>insert into rest_emp(name, phone, email, address) values (&#39;Demo User&#39;, &#39;111 111 1111&#39;, &#39;demo.user@test.com&#39;, &#39;100 Street SW&#39;);</code></p>
+<pre><code>insert into rest_emp(name, phone, email, address) values (&#39;Demo User&#39;, &#39;111 111 1111&#39;, &#39;demo.user@test.com&#39;, &#39;100 Street SW&#39;);</code></pre>
 <ol type="1" start="17">
 <li>View the results in your table:</li>
 </ol>
-<p><code>select * from rest_emp;</code></p>
+<pre><code>select * from rest_emp;</code></pre>
 <ol type="1" start="18">
 <li>Now, your database is ready. You can connect locally to your database. If you want to connect to your database from elsewhere, e.g., from your AppEngine, or from your local development setting, you need to change the mysql configurations to allow remote access. To do this, you need to make a change in your mysqld.cnf file, and then restart your mysql service. You may read the details in this <a href="https://www.digitalocean.com/community/tutorials/how-to-allow-remote-access-to-mysql" target="_blank">document</a>.</li>
 </ol>
 <ol type="1" start="19">
 <li>Open your mysqld.cnf. (depending on the installed database version, the location of the file might be slightly different on different systems).</li>
 </ol>
-<p><code>sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf</code></p>
+<pre><code>sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf</code></pre>
 <ol type="1" start="20">
 <li>Navigate to the line that begins with the <code>bind-address</code> directive. The default value will be <code>127.0.0.1</code>, meaning that the server will only look for local connections. You will need to change this directive to reference an external IP address, or set it to <code>0.0.0.0</code> meaning that it can be accessed from anywhere. The last option might not be convenient for production servers, but for practice, it might be easier to use.</li>
 </ol>
@@ -139,8 +141,8 @@
 <ol type="1" start="28">
 <li>Make sure that your project is selected correctly (the name in color) in the Cloud Shell. If not, you can see the list of your projects and select a project using the following gCloud commands:</li>
 </ol>
-<p><code>gcloud projects list</code></p>
-<p><code>gcloud config set project</code> my-project</p>
+<pre><code>gcloud projects list
+gcloud config set project my-project</code></pre>
 <ol type="1" start="29">
 <li>From this shell, you have access to the machine that will host your application, and AppEngine has provided you with a machine that already has the Node installation.</li>
 </ol>
@@ -148,38 +150,38 @@
 <li>Let&#39;s now get the code from Github to this machine. Git is also already installed on your machine. Enjoy it! </li>
 <li>Clone the Git repository to get the sample code:</li>
 </ol>
-<p><code>git clone</code><a href="https://github.com/Yasaman-A/rest-API-examples.git" target="_blank"><code> https://github.com/Yasaman-A/rest-API-examples.git</code></a></p>
-<p><code>cd rest-API-examples/</code></p>
+<pre><code>git clone https://github.com/Yasaman-A/rest-API-examples.git
+cd rest-API-examples/</code></pre>
 <ol type="1" start="32">
 <li>The code requires your database credentials. These need to be added to a file called .env (which you should create). </li>
 <li>Create the .env file under your rest-API-examples folder and open it to modify it:</li>
 </ol>
-<p><code>touch .env</code></p>
-<p><code>nano .env</code></p>
+<pre><code>touch .env
+nano .env</code></pre>
 <ol type="1" start="34">
 <li>Add your database information to the .env file, e.g., </li>
 </ol>
-<p><code>DB_HOST=136.777.888.55</code></p>
-<p><code>DB_PORT=3306</code></p>
-<p><code>DB_NAME=my_database</code></p>
-<p><code>DB_USER=root</code></p>
-<p><code>DB_PASS=SecReTP@ssw0rd</code></p>
+<pre><code>DB_HOST=136.777.888.55
+DB_PORT=3306
+DB_NAME=my_database
+DB_USER=root
+DB_PASS=SecReTP@ssw0rd</code></pre>
 <ol type="1" start="35">
 <li>Save your .env file. To confirm the file content, you can view the content using the &#34;cat&#34; command:</li>
 </ol>
-<p><code>cat .env</code></p>
+<pre><code>cat .env</code></pre>
 <ol type="1" start="36">
 <li>The dependencies are listed in the package.json file. To install the dependencies, run:</li>
 </ol>
-<p><code>npm install</code></p>
+<pre><code>npm install</code></pre>
 <ol type="1" start="37">
 <li> Now, you can start the code by Google Cloud command:</li>
 </ol>
-<p><code>gcloud app deploy</code></p>
+<pre><code>gcloud app deploy</code></pre>
 <ol type="1" start="38">
 <li>When your app is running, you can see the URL of your service at using</li>
 </ol>
-<p><code>gcloud app browse</code></p>
+<pre><code>gcloud app browse</code></pre>
 <ol type="1" start="39">
 <li>Note that the AppEngine server is already on https. So you can call it from anywhere and use it. </li>
 </ol>

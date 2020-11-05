@@ -109,27 +109,29 @@
 <ol type="1" start="20">
 <li>Make sure that your project is selected correctly (the name in color) in the Cloud Shell. If not, you can see the list of your projects and select a project using the following gCloud commands:</li>
 </ol>
-<p><code>gcloud projects list</code></p>
-<p><code>gcloud config set project</code> my-project</p>
+<pre><code>gcloud projects list
+gcloud config set project my-project</code></pre>
 <ol type="1" start="21">
 <li>Now connect to your mysql database, using gCloud commands. Enter the name of instance and the database user with which you want to connect to the database. Then enter the password.</li>
 </ol>
-<p><code>gcloud sql connect</code> myinstance <code>--user=</code>root</p>
+<pre><code>gcloud sql connect myinstance --user=root</code></pre>
 <ol type="1" start="22">
-<li> You can now enter mysql commands to use an existing database (<code>use</code> my_database), or see the existing databases (<code>show databases;</code>).</li>
+<li> You can now enter mysql commands to use an existing database (<code>use my_database</code>), or see the existing databases (<code>show databases;</code>).</li>
 </ol>
+<pre><code>show databases;
+use my_database;</code></pre>
 <ol type="1" start="23">
 <li>You can list the existing tables (<code>show tables;</code>) or create a table. This example here, is creating a table called rest_emp with four columns of name, phone, email, address.</li>
 </ol>
-<p><code>CREATE TABLE rest_emp (id INT AUTO_INCREMENT PRIMARY KEY, name varchar(255) not null, phone varchar(12), email varchar(255) not null, address varchar(255)not null);</code></p>
+<pre><code>CREATE TABLE rest_emp (id INT AUTO_INCREMENT PRIMARY KEY, name varchar(255) not null, phone varchar(12), email varchar(255) not null, address varchar(255)not null);</code></pre>
 <ol type="1" start="24">
 <li>You can enter data into your table. For example:</li>
 </ol>
-<p><code>insert into rest_emp(name, phone, email, address) values (&#39;Demo User&#39;, &#39;111 111 1111&#39;, &#39;demo.user@test.com&#39;, &#39;100 Street SW&#39;);</code></p>
+<pre><code>insert into rest_emp(name, phone, email, address) values (&#39;Demo User&#39;, &#39;111 111 1111&#39;, &#39;demo.user@test.com&#39;, &#39;100 Street SW&#39;);</code></pre>
 <ol type="1" start="25">
 <li>View the results in your table:</li>
 </ol>
-<p><code>select * from rest_emp;</code></p>
+<pre><code>select * from rest_emp;</code></pre>
 <h2 is-upgraded>The authorized networks for your database</h2>
 <ol type="1" start="26">
 <li>When your database is ready, make sure that you know the 1) public IP address of your instance, and also 2) the name of your database, 3) the database user and 4) password. You can get the public IP address of your database from the overview page:</li>
@@ -150,55 +152,55 @@
 <ol type="1" start="1">
 <li>When you start a new operating system, you would normally update it by running this command: </li>
 </ol>
-<p><code>sudo apt update</code></p>
+<pre><code>sudo apt update</code></pre>
 <ol type="1" start="2">
 <li>Run the following commands. (Here is a <a href="https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04" target="_blank">reference</a> that you may use.)</li>
 </ol>
-<p><code>sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates</code></p>
-<p><code>curl -sL</code><a href="https://deb.nodesource.com/setup_12.x" target="_blank"><code> https://deb.nodesource.com/setup_12.x</code></a><code> | sudo -E bash -</code></p>
-<p><code>sudo apt-get install -y nodejs</code></p>
+<pre><code>sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs</code></pre>
 <ol type="1" start="3">
 <li>To confirm your installation, check the version of your Node using:</li>
 </ol>
-<p><code>nodejs -v</code></p>
+<pre><code>nodejs -v</code></pre>
 <h2 is-upgraded>Setting up Git on Ubuntu</h2>
 <ol type="1" start="4">
 <li>Install Git on your system. To do this, run the following commands. (Here is a <a href="https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-18-04-quickstart" target="_blank">document</a> you may use.)</li>
 </ol>
-<p><code>sudo apt install git</code></p>
-<p><code>git --version</code></p>
+<pre><code>sudo apt install git
+git --version</code></pre>
 <h2 is-upgraded>Download and Run the Sample Code</h2>
 <ol type="1" start="5">
 <li>Clone the Git repository to get the sample code:</li>
 </ol>
-<p><code>git clone</code><a href="https://github.com/Yasaman-A/rest-API-examples.git" target="_blank"><code> https://github.com/Yasaman-A/rest-API-examples.git</code></a></p>
-<p><code>cd rest-API-examples/</code></p>
+<pre><code>git clone https://github.com/Yasaman-A/rest-API-examples.git
+cd rest-API-examples/</code></pre>
 <ol type="1" start="6">
 <li>The code requires your database credentials. These need to be added to a file called .env (which you should create). </li>
 <li>Create the .env file under your rest-API-examples folder and open it to modify it:</li>
 </ol>
-<p><code>touch .env</code></p>
-<p><code>nano .env</code></p>
+<pre><code>touch .env
+nano .env</code></pre>
 <ol type="1" start="8">
 <li>Add your database information to the .env file, e.g., </li>
 </ol>
-<p><code>DB_HOST=&#34;136.777.888.55&#34;</code></p>
-<p><code>DB_PORT=&#34;3306&#34;</code></p>
-<p><code>DB_NAME=&#34;my_database&#34;</code></p>
-<p><code>DB_USER=&#34;root&#34;</code></p>
-<p><code>DB_PASS=&#34;SecReTP@ssw0rd&#34;</code></p>
+<pre><code>DB_HOST=136.777.888.55
+DB_PORT=3306
+DB_NAME=my_database
+DB_USER=root
+DB_PASS=SecReTP@ssw0rd</code></pre>
 <ol type="1" start="9">
 <li>Save your .env file. To confirm the file content, you can view the content using the &#34;cat&#34; command:</li>
 </ol>
-<p><code>cat .env</code></p>
+<pre><code>cat .env</code></pre>
 <ol type="1" start="10">
 <li>The dependencies are listed in the package.json file. To install the dependencies, run:</li>
 </ol>
-<p><code>npm install</code></p>
+<pre><code>npm install</code></pre>
 <ol type="1" start="11">
 <li> Now, you can start the code by:</li>
 </ol>
-<p><code>npm start</code></p>
+<pre><code>npm start</code></pre>
 <ol type="1" start="12">
 <li>You should be able to access the rest endpoints. Open your browser or your Postman and submit a Get request to the /api/emp endpoint. For example:</li>
 </ol>
