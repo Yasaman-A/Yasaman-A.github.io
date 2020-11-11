@@ -70,7 +70,7 @@
 <li>When you start your VM, it receives a public IP address, but the address may change when you stop and restart the VM instance. If you want to keep your VM IP address to stay the same, you can assign a static IP address. This can be done in the network tab (right above the Firewall tab that you just worked with).</li>
 </ol>
 <ol type="1" start="9">
-<li>Reserve a standard static IP V4 address and attach it to your VM instance by selecting the name of your instance from the list. (Later, you can use this IP address to define the authorized networks for your CLoud SQL instance.)</li>
+<li>Reserve a standard static IP V4 address and attach it to your VM instance by selecting the name of your instance from the list. </li>
 </ol>
 <p class="image-container"><img style="width: 480.50px" src="img/6121d73f392bdad2.png"></p>
 
@@ -97,9 +97,10 @@ sudo mysql_secure_installation</code></pre>
 </ol>
 <pre><code>sudo mysql -u root -p</code></pre>
 <ol type="1" start="14">
-<li>You can now use sql command to create databases, tables, and insert some records.  You can now enter mysql commands to use an existing database (<code>use</code> my_database), or see the existing databases (<code>show databases;</code>). </li>
+<li>You can now use sql command to create databases, tables, and insert some records.  To create a database you can use (<code>create database</code> my_database). You can now enter mysql commands to use an existing database (<code>use</code> my_database), or see the existing databases (<code>show databases;</code>). </li>
 </ol>
 <pre><code>show databases;
+Create database my_database;
 use my_database;</code></pre>
 <ol type="1" start="15">
 <li>You can list the existing tables (<code>show tables;</code>) or create a table. This example here, is creating a table called rest_emp with four columns of name, phone, email, address.</li>
@@ -114,13 +115,17 @@ use my_database;</code></pre>
 </ol>
 <pre><code>select * from rest_emp;</code></pre>
 <ol type="1" start="18">
-<li>Now, your database is ready. You can connect locally to your database. If you want to connect to your database from elsewhere, e.g., from your AppEngine, or from your local development setting, you need to change the mysql configurations to allow remote access. To do this, you need to make a change in your mysqld.cnf file, and then restart your mysql service. You may read the details in this <a href="https://www.digitalocean.com/community/tutorials/how-to-allow-remote-access-to-mysql" target="_blank">document</a>.</li>
+<li>Now, your database is ready. You can connect locally to your database. If you want to connect to your database from elsewhere, e.g., from your AppEngine, or from your local development setting, you need to change the mysql configurations to allow remote access. To do this, this is a two step process: </li>
 </ol>
 <ol type="1" start="19">
-<li>Open your mysqld.cnf. (depending on the installed database version, the location of the file might be slightly different on different systems).</li>
+<li>First, you need to make a change in your mysqld.cnf file. Open your mysqld.cnf. (depending on the installed database version, the location of the file might be slightly different on different systems).</li>
 </ol>
 <pre><code>sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf</code></pre>
 <ol type="1" start="20">
+<li>Then, you should grant remote access to your user. Replace YOUR-PASSWORD with your actual password!</li>
+</ol>
+<pre><code>GRANT ALL PRIVILEGES ON *.* TO &#39;root&#39;@&#39;%&#39; IDENTIFIED BY &#39;YOUR-PASSWORD&#39;;</code></pre>
+<ol type="1" start="21">
 <li>Navigate to the line that begins with the <code>bind-address</code> directive. The default value will be <code>127.0.0.1</code>, meaning that the server will only look for local connections. You will need to change this directive to reference an external IP address, or set it to <code>0.0.0.0</code> meaning that it can be accessed from anywhere. The last option might not be convenient for production servers, but for practice, it might be easier to use.</li>
 </ol>
 
@@ -128,7 +133,7 @@ use my_database;</code></pre>
       </google-codelab-step>
     
       <google-codelab-step label="REST APIs on App Engine" duration="0">
-        <ol type="1" start="21">
+        <ol type="1" start="22">
 <li>Make sure that the billing is active for the project that you are currently in.</li>
 <li>Now, let&#39;s setup our REST API application. The code is in Express Js and needs a Node environment to run. Instead of installing the node platform, let&#39;s use the AppEngine from Google Cloud.</li>
 <li>Go to the AppEngine tab in your console, and start it. </li>
@@ -138,27 +143,27 @@ use my_database;</code></pre>
 <li>Open Cloud Shell by clicking the Cloud Shell icon (<img alt="Cloud Shell icon" style="width: 18.00px" src="img/d99d0d2e7df84264.png">) in the upper right corner.</li>
 </ol>
 <p class="image-container"><img style="width: 624.00px" src="img/a1f606bd3bd6e88b.png"></p>
-<ol type="1" start="28">
+<ol type="1" start="29">
 <li>Make sure that your project is selected correctly (the name in color) in the Cloud Shell. If not, you can see the list of your projects and select a project using the following gCloud commands:</li>
 </ol>
 <pre><code>gcloud projects list
 gcloud config set project my-project</code></pre>
-<ol type="1" start="29">
+<ol type="1" start="30">
 <li>From this shell, you have access to the machine that will host your application, and AppEngine has provided you with a machine that already has the Node installation.</li>
 </ol>
-<ol type="1" start="30">
+<ol type="1" start="31">
 <li>Let&#39;s now get the code from Github to this machine. Git is also already installed on your machine. Enjoy it! </li>
 <li>Clone the Git repository to get the sample code:</li>
 </ol>
 <pre><code>git clone https://github.com/Yasaman-A/rest-API-examples.git
 cd rest-API-examples/</code></pre>
-<ol type="1" start="32">
+<ol type="1" start="33">
 <li>The code requires your database credentials. These need to be added to a file called .env (which you should create). </li>
 <li>Create the .env file under your rest-API-examples folder and open it to modify it:</li>
 </ol>
 <pre><code>touch .env
 nano .env</code></pre>
-<ol type="1" start="34">
+<ol type="1" start="35">
 <li>Add your database information to the .env file, e.g., </li>
 </ol>
 <pre><code>DB_HOST=136.777.888.55
@@ -166,23 +171,23 @@ DB_PORT=3306
 DB_NAME=my_database
 DB_USER=root
 DB_PASS=SecReTP@ssw0rd</code></pre>
-<ol type="1" start="35">
+<ol type="1" start="36">
 <li>Save your .env file. To confirm the file content, you can view the content using the &#34;cat&#34; command:</li>
 </ol>
 <pre><code>cat .env</code></pre>
-<ol type="1" start="36">
+<ol type="1" start="37">
 <li>The dependencies are listed in the package.json file. To install the dependencies, run:</li>
 </ol>
 <pre><code>npm install</code></pre>
-<ol type="1" start="37">
+<ol type="1" start="38">
 <li> Now, you can start the code by Google Cloud command:</li>
 </ol>
 <pre><code>gcloud app deploy</code></pre>
-<ol type="1" start="38">
+<ol type="1" start="39">
 <li>When your app is running, you can see the URL of your service at using</li>
 </ol>
 <pre><code>gcloud app browse</code></pre>
-<ol type="1" start="39">
+<ol type="1" start="40">
 <li>Note that the AppEngine server is already on https. So you can call it from anywhere and use it. </li>
 </ol>
 
