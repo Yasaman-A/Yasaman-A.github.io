@@ -28,9 +28,8 @@
                   feedback-link="">
     
       <google-codelab-step label="Introduction" duration="0">
-        <p>In this activity, you will practice your Git knowledge. You will follow a set of steps and will take screenshots of your work as a proof of completing the tasks. You will include all your screenshots in a word file and submit one file.</p>
-<p><strong>Submission format </strong>- You will work individually on this task, however, for one of the steps (reviewing your pull request) you will need to add a friend to your repository and ask them to do this step for you. </p>
-<p><strong>Estimated time</strong>: 1 hour</p>
+        <p>In this activity, you will practice your Git knowledge related to <strong>branching</strong> and <strong>pull requests</strong>. You will follow a set of steps and will take screenshots of your work as proof of completing the tasks. You will include all your screenshots in a word file and submit one file.</p>
+<p><strong>Collaboration format </strong>- You will work individually on this task; however, for one of the steps (reviewing your pull request), you will need to add a friend to your repository and ask them to do this step for you.</p>
 <p class="image-container"><img style="width: 130.56px" src="img/708045c26852e378.png"></p>
 
 
@@ -40,11 +39,11 @@
         <h2 is-upgraded>Accounts and installations </h2>
 <ol type="1" start="1">
 <li>We will use Github in this activity. If you do not have a Github account, please create an account at <a href="https://github.com/" target="_blank">https://github.com/</a> before you start.</li>
-<li>Then, make sure that Git is installed on your computer. You can check the version of your git with git --version. If it is not installed, please install it from <a href="https://git-scm.com/downloads" target="_blank">https://git-scm.com/downloads</a></li>
+<li>Then, make sure that Git is installed on your computer. You can check the version of your Git with the &#34;git --version&#34; command. If Git is not installed, please install it from <a href="https://git-scm.com/downloads" target="_blank">https://git-scm.com/downloads</a></li>
 </ol>
 <h2 is-upgraded>Create a repository and set the permissions</h2>
 <ol type="1" start="3">
-<li>Create a <strong>private</strong> repository in Github. Name your repository as ‘exercise-<em>XX</em>&#39;, where <em>XX</em> is your initials, e.g., John Doe will create exercise-<em>JD</em> repository. Select to create a readme file from the UI.</li>
+<li>Create a <strong>private</strong> repository in Github. Name your repository as ‘exercise-<em>XX</em>&#39;, where <em>XX</em> is your initials, e.g., John Doe will create the exercise-<em>JD</em> repository. Select to create a readme file from the UI.</li>
 </ol>
 <ol type="1" start="4">
 <li>Give access to your friend who will play the reviewer role for you in section 5 (steps 17-18) of this activity. </li>
@@ -56,20 +55,20 @@
       <google-codelab-step label="Configure and setup" duration="0">
         <h2 is-upgraded>Global and local configs</h2>
 <ol type="1" start="5">
-<li>Now, check the list of the global configs on your computer. Make sure that your Git username and email address are set correctly, before cloning your remote repository to your computer. Take a snapshot of your global configs.</li>
+<li>Now, check the list of the global configs on your computer. Make sure that your Git username and email address are set correctly before cloning your remote repository to your computer. Take a snapshot of your global configs.</li>
 </ol>
 <ol type="1" start="6">
-<li>Clone your repository on your computer and go to your cloned directly.</li>
+<li>Clone your repository on your computer and go to your clone directly.</li>
 </ol>
 <ol type="1" start="7">
-<li>Now, list all files (including hidden files) in this directory. You should see a hidden folder called ‘.git&#39; which includes all your git related files and information. Take a screenshot of all files (including hidden files) under the .git folder.</li>
+<li>Now, list all files (including the hidden files) in this directory. You should see a hidden folder called ‘.git&#39; which includes all your git related files and information. Take a screenshot of all files (including hidden files) under the .git folder.</li>
 </ol>
 <ol type="1" start="8">
 <li>Check each file under .git and guess what each file is for. Search and learn about the ones that you do not know. There is no need to submit your answer for this step.</li>
 </ol>
 <h2 is-upgraded>Issue and project settings</h2>
 <ol type="1" start="9">
-<li>In your github file create a project (automated kanban with reviews). Give it a name of your choice. Go to the project and remove the auto generated cards from your kanban board.</li>
+<li>In your Github, create a project (automated kanban with reviews). Please give it a name of your choice. Then, go to the project and remove the auto-generated cards from your kanban board.</li>
 </ol>
 <ol type="1" start="10">
 <li>Create an issue of ‘Questions in exercise 1 need to be completed&#39; in your repository and assign it to yourself and to your project, and select a label for it. Check your kanban and make sure that the issue is listed in your project. Remember the ID of the issue you created (We will need this number soon!).</li>
@@ -81,7 +80,7 @@
     
       <google-codelab-step label="Create a develop branch" duration="0">
         <ol type="1" start="11">
-<li>Check the existing branches in your local repository. You must have a default branch, such as ‘master&#39; branch. If ‘develop&#39; branch does not exist, create a branch and name it ‘develop&#39;. Then, push your branch to the remote repository. Take a screenshot that shows you have two branches in your local and also in your remote repositories.</li>
+<li>Check the existing branches in your local repository. You must have a default branch, such as ‘main&#39; branch. If ‘develop&#39; branch does not exist, create a branch and name it ‘develop&#39;. Then, push your branch to the remote repository. Take a screenshot that shows you have two branches in your local and also in your remote repositories.</li>
 </ol>
 <p class="image-container"><img style="width: 248.50px" src="img/fe7cb4eaa45ef57c.png"></p>
 
@@ -90,10 +89,10 @@
     
       <google-codelab-step label="Complete the issue assigned to you" duration="0">
         <ol type="1" start="12">
-<li>Your task ‘Questions in exercise 1 need to be completed&#39; is to write answers for two questions. Question 1 - What is the .gitignore file and how can you create it? Question 2 - Search and find a feature or a useful tip about Git that we have not touched in class and describe it. You will complete these two questions in two separate commits. For example, answer the first question and commit it, and then answer the second question. You can write your answers in a .md or .html file that you create. Let&#39;s start. </li>
+<li>Your task ‘Questions in exercise 1 need to be completed&#39; is to write answers for two questions. <em>Question 1</em> - What is the .gitignore file and how can you create it? <em>Question 2</em> - Search and find a feature or a useful tip about Git that we have not touched in class and describe it. You will complete these two questions in two separate commits. For example, answer the first question and commit it, and then answer the second question. You can write your answers in a .md or .txt file that you create. Let&#39;s start! </li>
 </ol>
 <ol type="1" start="13">
-<li>Move your task to in-progress and start your work. Create a local branch for your issue. For example: git checkout -b issue-<em>ID</em>/exercise-answers, where <em>ID</em> is your issue number. You can find it your issue tab or in your kanban.</li>
+<li>Move your task to in-progress and start your work. Make sure you are in the develop branch. Pull the remote develop branch to get all the recent updates of the develop branch. Now, create a local branch for your issue. For example: <em>git checkout -b issue-ID/exercise-answers</em>, where <em>ID</em> is your issue number. You can find it in your issue tab or in your kanban.</li>
 </ol>
 <ol type="1" start="14">
 <li>In this newly created branch, create a file and write your answer for the first question. Use add and commit commands with proper message to commit your work, e.g., git add answers.md, and then git commit -m ‘answer to first question is completed&#39;.</li>
@@ -102,7 +101,7 @@
 <li>Now, add your answer to the second question and commit it with a proper message. Check the logs using git log and take a screenshot.</li>
 </ol>
 <ol type="1" start="16">
-<li>Now, push your issue branch to your remote repository, e.g., git push origin issue-<em>ID</em>/exercise-answers</li>
+<li>Now, push your issue branch to your remote repository, e.g., <em>git push origin issue-ID/exercise-answers</em>. It will create a new remote branch and push your content to this new remote branch.</li>
 </ol>
 <p class="image-container"><img style="width: 100.70px" src="img/710504003a63e87b.png"></p>
 
@@ -114,16 +113,16 @@
 <li>Go to your remote repository and create a pull request to merge your changes to the <strong>develop</strong> branch. When creating the pull request, assign it to your project, and select the reviewer to be your friend (who already has accepted your invite to join your repository). For the description use &#34;<strong>resolves #</strong><strong><em>ID</em></strong>&#34;, where <em>ID</em> is the ID of the issue that you have completed.</li>
 </ol>
 <ol type="1" start="18">
-<li>Go to your Kanban and make sure that the issue is in the proper column, waiting for a review. Wait until the reviewer approves your changes. After the review, your issue should be in the reviewed column.</li>
+<li>Go to your Kanban and make sure that the issue is in the proper column, that is the issue and the pull request cards bein in the in-progress columns. Wait until the reviewer approves your changes. The reviewer may comment on your pull request and approve or ask for more changes. If you are asked to make some changes, apply them in the same local branch as you were working on and push to the same remote branch. The new changes will be added to your pull request and the reviewer will be able to see the new changes. The review process may take several rounds before the pull request gets approved.</li>
 </ol>
 <ol type="1" start="19">
-<li>After your pull request is approved, it is time to merge it. Go to the pull request tab and squash and merge the commits. Merge commit comments and add one single readable comment, and then do the merge. After this step, your issue must be in the done column in your kanban. Take a screenshot of your kanban.</li>
+<li>After your pull request is approved, it is time to merge it. At this time, your issue (the task) should still be in the in-progress column and the pull request card should be in reviewed column. Now, we should actually merge the pull request. Go to the pull request tab and &#34;squash and merge&#34; the commits. Merge commit comments and add one single readable comment describing both commits, and then do the merge. After this step, your issue and the pull request cards must be in the done column in your kanban. Take a screenshot of your kanban.</li>
 </ol>
 <ol type="1" start="20">
-<li>Check that the codes in your develop branch includes your changes, and then delete your branch from the remote repository, and also from your local repository, e.g., with git branch -d &lt;name of the branch&gt;. Note that before deleting your local branch, you should first switch to a different branch, e.g., develop branch. Take a screenshot showing that your local and remote repositories both have only two branches.</li>
+<li>Check that the code in your develop branch includes your changes, and then delete your branch from the remote repository, and also from your local repository, e.g., switch to develop branch and then delete the issue branch with <em>git branch -d &lt;name of the branch&gt;</em>. Note that before deleting your local branch, you should first switch to a different branch, e.g., develop branch. Take a screenshot showing that your local and remote repositories both have only two branches.</li>
 </ol>
 <ol type="1" start="21">
-<li>Pull the the newly added files to the develop branch from the remote repository to update your local develop branch. Now, both your remote and local repositories should be up to date.</li>
+<li>Pull the newly added files to the develop branch from the remote repository to update your local develop branch. Now, both your remote and local repositories should be up to date.</li>
 </ol>
 <ol type="1" start="22">
 <li>Finally, take a screenshot of the commit history for your develop branch. It should only contain one commit for the both changes (commits) that you merged.</li>
