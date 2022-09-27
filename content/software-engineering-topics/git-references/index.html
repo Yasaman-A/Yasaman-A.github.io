@@ -1,0 +1,142 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Git Commands and References</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="git-commands-and-references"
+                  title="Git Commands and References"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Introduction" duration="0">
+        <p>In this activity, you will work with some git commands and see how they can affect the git history. More specifically, you will practice integrating changes in a pull request into your main branch using three methods of merging, squash and merging, and rebasing. </p>
+<p><strong>Collaboration format </strong>- You should work in groups of 3. One submission with the name of all members is required. If for any reason you are unable to work in a group, you must do all the steps by yourself. This will require you to create three repositories and integrate changes with three different ways of merging, squash and rebasing.</p>
+<p class="image-container"><img style="width: 130.56px" src="img/fb749cd1a6d0e0db.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Complete Your Task" duration="0">
+       
+<ol type="1" start="1">
+<li>Create a private github repository. You should have a main branch as your default branch. Assume that there are some issues in your repository. You can create an issue from your issue tab. </li>
+</ol>
+<p class="image-container"><img style="width: 624.00px" src="img/cd7396dc14a98823.png"></p>
+<ol type="1" start="2">
+<li>The common steps should be done by all members of the team. To make the comparison easier, all members of the team should try to use the same file names and commit messages in the following steps. </li>
+</ol>
+<ol type="1" start="3">
+<li>Clone this repository to your computer and start working on issue 1.</li>
+</ol>
+<ol type="1" start="4">
+<li>First, update your main branch by pulling it from the remote main branch. </li>
+</ol>
+<ol type="1" start="5">
+<li>Then, branch off from the latest version of main and create a new issue branch, e.g., issue1. Create a file, a.txt, with a content of your choice in this branch. Then, add and commit this file.</li>
+</ol>
+<ol type="1" start="6">
+<li>Your task in issue 1 requires more implementation. Create another file, aa.txt, with a content of your choice in this branch. Then, add and commit this file.</li>
+</ol>
+<ol type="1" start="7">
+<li>Assuming your task is done for issue 1. Now, it is the time for submitting a pull request. Push your changes to remote repository in a branch with the same name as your local branch.</li>
+</ol>
+<ol type="1" start="8">
+<li>Now, it is the time for merging your pull request. Usually, another member of the team should review the pull request before merging. We skip this step for simplicity and jump to merging.</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Merging" duration="0">
+        <ol type="1" start="9">
+<li>You will do this in three ways. If you are working in groups of three, each member can do it in one way and then you can compare your results.</li>
+</ol>
+<ol type="1" start="10">
+<li>Team member ONE - you should merge your pull request into the main branch. Then, you should switch to your local main and update it with the latest changes in the remote main.</li>
+</ol>
+<ol type="1" start="11">
+<li>Team member TWO - you should squash and merge your pull request into the main branch. Then, you should switch to your local main and update it with the latest changes in the remote main.</li>
+</ol>
+<ol type="1" start="12">
+<li>Team member THREE - you should rebase and merge your pull request into the main branch. Then, you should switch to your local main and update it with the latest changes in the remote main.</li>
+</ol>
+<p class="image-container"><img style="width: 140.95px" src="img/f281c3c303479dfb.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Review &amp; Visualize" duration="0">
+        <ol type="1" start="13">
+<li>Review the git logs and visualize the history. You should do this for all three ways of merging and include the results in your submission. Using the git log command, review the log history. From the log history, try to manually visualize the git history. You may draw it using pen and paper, or use online tools like draw.io. To show the commits you can use their SHA or you can name them as C1, C2, ... .</li>
+</ol>
+<ol type="1" start="14">
+<li>Search and find a git visualization tool and use it for visualizing your git history. For example, if you are using VS Code, you can use the Git Graph plugin to visualize your git history. Compare the result of the visualization tool with your own visualization. If needed, make corrections to your drawing. </li>
+</ol>
+
+<p class="image-container"><img style="width: 60.95px" src="img/git-viz.png"></p>
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Discussion" duration="0">
+        <ol type="1" start="15">
+<li>Compare the history logs and the visualizations created by the three different merging techniques you used. You may consider the following aspects for your comparison:</li>
+<ul type="1" start="1">
+  <li>How many commits are added to the main branch as a result of merging your issue1 branch into the main branch?</li>
+  <li>Who is the author of the new commits?</li>
+  <li>Is there a link between the new commit to its parent commit from the issue1 branch?</li>
+  </ul>
+</ol>
+
+<ol type="1" start="16">
+<li>Based on your comparison, summarize the differences between the three ways of merging that you tried, and include this summary in your report. </li>
+</ol>
+<ol type="1" start="17">
+<li><em>Optionally</em>, you may search and read about these three merging techniques and use your findings to complete your answer. </li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Congratulations" duration="0">
+        <ol type="1" start="18">
+<li>You finished your task. One submission per group (group of three) is required. Your submission should include: </li>
+<ul type="1" start="1">
+  <li>visualizations of the git history for the three different techniques you compared. </li>
+  <li>summary of your comparisons of these three merging techniques. </li>
+  </ul>
+  
+</ol>
+<p class="image-container"><img style="width: 211.00px" src="img/ce131ab782aea661.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
