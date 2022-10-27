@@ -1,0 +1,215 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id=""
+                  title=""
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Introduction" duration="0">
+        <p>In this activity, you will create a virtual machine (VM) on Google Cloud to run your REST API code which connects to a SQL database hosted on the same VM.</p>
+<p>Students registered in the course can redeem their course credits for Google Cloud platform and use it for the activity and also for their course projects. The instruction to access Google Cloud course credit is provided in the course homepage.</p>
+<p class="image-container"><img style="width: 484.00px" src="img/228a989ef2f91953.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create Your Own VM" duration="0">
+        <p>In this part, you will create a VM on Google Compute Engine.</p>
+<h2 is-upgraded>VM Setup</h2>
+<ol type="1" start="1">
+<li>Go to the Google Cloud console page.</li>
+<li>Check the top of the page and make sure that you have an active project listed in the header bar and your billing account is active for your project.</li>
+</ol>
+<p class="image-container"><img style="width: 272.50px" src="img/cf0fe701aae368d.png"></p>
+<p class="image-container"><img style="width: 625.00px" src="img/473d795a16b4e2f3.png"></p>
+<ol type="1" start="3">
+<li>Go to the Compute Engine tab and create a VM. Here is the detail you may use (vCPU: 2, Operating system: Ubuntu 20.04. Allow http and https traffic to your instance. Let the other parameters stay in their default levels). Among these, the selection of the operating system is important to make sure that you can follow the commands in this activity. </li>
+</ol>
+<p class="image-container"><img style="width: 352.04px" src="img/f43fd8205264e3df.png"></p>
+<ol type="1" start="4">
+<li>Click on save to create your instance and make sure that it is running.Your VM will receive a public IP that you can use to access services running in it.</li>
+</ol>
+<p class="image-container"><img style="width: 624.50px" src="img/4315637cea7b3936.png"></p>
+<h2 is-upgraded>Network Setup</h2>
+<ol type="1" start="5">
+<li>If you will run an application that uses special ports, you need to open those ports in the firewall, otherwise, you will not be able to access the service. For this, you need to create new rules in your firewall. To access the firewall configurations, click on the &#34;View network details&#34; from the settings (<img style="width: 20.00px" src="img/f60a72a12ca2bce8.png">) of your VM.</li>
+</ol>
+<p class="image-container"><img style="width: 624.00px" src="img/13af8dbe89075c00.png"></p>
+<ol type="1" start="6">
+<li>Create a new rule, and assign a name for your rule, and add that in the target tags as well. Set the source IP to 0.0.0.0/0 to let clients be able to access your application from anywhere. Set the ports you want to open, e.g., 80, 443, 8080, 8081, 3306, under ‘Protocols and ports&#39; or you may open all ports (not recommended). Opening port 3306 (or database port) is only needed when you need to connect to the database from a different machine.</li>
+</ol>
+<h2 is-upgraded><img style="width: 521.00px" src="img/eb1551fa25162319.png"></h2>
+<ol type="1" start="7">
+<li>After saving your rule, click on the name of your VM instance to edit its properties. Add the rule you defined to the network tags of your VM.</li>
+</ol>
+<p class="image-container"><img style="width: 501.00px" src="img/fba0dfcffe359c0a.png"></p>
+<h2 is-upgraded>Setup Static IP</h2>
+<ol type="1" start="8">
+<li>When you start your VM, it receives a public IP address, but the address may change when you stop and restart the VM instance. If you want to keep your VM IP address to stay the same, you can assign a static IP address. This can be done in the network tab (right above the Firewall tab that you just worked with).</li>
+</ol>
+<ol type="1" start="9">
+<li>Reserve a standard static IP V4 address and attach it to your VM instance by selecting the name of your instance from the list. (Later, you can use this IP address to define the authorized networks for your CLoud SQL instance.)</li>
+</ol>
+<p class="image-container"><img style="width: 480.50px" src="img/d2bd939b7ffa18c8.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create Your Database" duration="0">
+        <ol type="1" start="1">
+<li>Login to your VM using ssh, and first update your system:</li>
+</ol>
+<pre><code>sudo apt update</code></pre>
+<p class="image-container"><img style="width: 556.26px" src="img/f7467e78001e5cf.png"></p>
+<ol type="1" start="2">
+<li>Install MySql, and start the service.</li>
+</ol>
+<pre><code>sudo apt install mysql-server
+
+sudo systemctl start mysql.service</code></pre>
+<ol type="1" start="3">
+<li>Then, you may connect to your mysql environment using:</li>
+</ol>
+<pre><code>sudo mysql</code></pre>
+<ol type="1" start="4">
+<li>Then run the following ALTER USER command to change the root user&#39;s authentication method to one that uses a password.</li>
+</ol>
+<pre><code>ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;your-password&#39;;
+
+exit;</code></pre>
+<ol type="1" start="5">
+<li>Then, you can run the following command to do the installation. You will be prompted to answer a couple of questions. When you are asked to enter the password of the root user to start the installation process, you should use <code>your-password</code>. You can change the password of the root user while installing it.</li>
+</ol>
+<pre><code>sudo mysql_secure_installation;
+</code></pre>
+<ol type="1" start="6">
+<li>Now, you may connect to your mysql environment. It is recommended that you enable password for your root user, but if you have not done so, you do not need to pass <code>-p</code> option.</li>
+</ol>
+<pre><code>sudo mysql -u root -p</code></pre>
+<ol type="1" start="7">
+<li>You can now use sql command to create databases, tables, and insert some records.  To create a database you can use (<code>create database</code> my_database). You can now enter mysql commands to use an existing database (<code>use</code> my_database), or see the existing databases (<code>show databases;</code>). </li>
+</ol>
+<pre><code>show databases;
+create database my_database;
+use my_database;</code></pre>
+<ol type="1" start="8">
+<li>You can now create your tables and insert data into your tables. Here is a sample code to create an employee table and add a record into the table. </li>
+</ol>
+<pre><code>CREATE TABLE rest_emp (id INT AUTO_INCREMENT PRIMARY KEY, name varchar(255) not null, phone varchar(12), email varchar(255) not null, address varchar(255)not null);
+
+insert into rest_emp(name, phone, email, address) values (&#39;Demo User&#39;, &#39;111 111 1111&#39;, &#39;demo.user@test.com&#39;, &#39;100 Street SW&#39;);
+
+select * from rest_emp;
+</code></pre>
+<ol type="1" start="9">
+<li>When your database is ready, you can connect locally to your database. If you want to connect to your database from elsewhere, you need to change the mysql configurations to allow remote access. First, you need to make a change in your mysqld.cnf file. Open your mysqld.cnf. (depending on the installed database version, the location of the file might be slightly different on different systems). </li>
+</ol>
+<pre><code>sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf</code></pre>
+<ol type="1" start="10">
+<li>Navigate to the line that begins with the <code>bind-address</code> directive. The default value will be <code>127.0.0.1</code>, meaning that the server will only look for local connections. You will need to change this directive to reference an external IP address, or set it to <code>0.0.0.0</code> meaning that it can be accessed from anywhere. The last option is not secure and appropriate for production servers, but for practice, it might be easier to use.</li>
+<li>Then, you should grant remote access to your user.</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="REST APIs on Compute Engine" duration="0">
+        <p>We are going to setup a restAPIs that are written Express JS and you can run them on a node JS environment. To do this, login to your VM and let&#39;s set up nodeJs and also download the given sample code from Github and run it. Click on SSH to login to your machine:</p>
+<p class="image-container"><img style="width: 556.50px" src="img/31c0c594c69ec6f8.png"></p>
+<h2 is-upgraded>Setting up Node on Ubuntu 20.04</h2>
+<ol type="1" start="1">
+<li>When you start a new operating system, you would normally update it by running this command: </li>
+</ol>
+<pre><code>sudo apt update</code></pre>
+<ol type="1" start="2">
+<li>Run the following commands. (Here is a <a href="https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04" target="_blank">reference</a> that you may use.)</li>
+</ol>
+<pre><code>sudo apt install nodejs</code></pre>
+<ol type="1" start="3">
+<li>To confirm your installation, check the version of your Node using:</li>
+</ol>
+<pre><code>nodejs -v</code></pre>
+<h2 is-upgraded>Setting up Git on Ubuntu</h2>
+<ol type="1" start="4">
+<li>Install Git on your system. To do this, run the following commands.</li>
+</ol>
+<pre><code>sudo apt install git
+git --version</code></pre>
+<h2 is-upgraded>Download and Run the Sample Code</h2>
+<ol type="1" start="5">
+<li>Clone the Git repository to get the sample code:</li>
+</ol>
+<pre><code>git clone https://github.com/Yasaman-A/restAPI_template.git
+cd restAPI_template/</code></pre>
+<ol type="1" start="6">
+<li>The code requires your database credentials. These need to be added to a file called .env (which you should create). </li>
+<li>Create the .env file under your rest-API-examples folder and open it to modify it:</li>
+</ol>
+<pre><code>touch .env
+nano .env</code></pre>
+<ol type="1" start="8">
+<li>Add your database information to the .env file, e.g., </li>
+</ol>
+<pre><code>DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_NAME=my_database
+DB_USER=root
+DB_PASS=SecReTP@ssw0rd</code></pre>
+<ol type="1" start="9">
+<li>Save your .env file. To confirm the file content, you can view the content using the &#34;cat&#34; command:</li>
+</ol>
+<pre><code>cat .env</code></pre>
+<ol type="1" start="10">
+<li>The dependencies are listed in the package.json file. To install the dependencies, run:</li>
+</ol>
+<pre><code>npm install</code></pre>
+<ol type="1" start="11">
+<li> Now, you can start the code by:</li>
+</ol>
+<pre><code>npm start</code></pre>
+<ol type="1" start="12">
+<li>You should be able to access the rest endpoints. Open your browser or your Postman and submit a Get request to the /api/emp endpoint. For example:</li>
+</ol>
+<p><a href="http://serverip:8080/api/endpoint" target="_blank">http://serverIP:8080/api/endpoint</a></p>
+<ol type="1" start="13">
+<li>If your VM and database is up and you still do not get a response, the potential problem could be that the setting of the firewall is not done properly and port 8080 is not accessible. Another source of issue could be that the information in the .env file is not entered properly. </li>
+</ol>
+<ol type="1" start="14">
+<li>In the setup we did in this activity, the https is not set up on the server. You should still be able to call and test your endpoints from Postman or the front end code you write locally.</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
